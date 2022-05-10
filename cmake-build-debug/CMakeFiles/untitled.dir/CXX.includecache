@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/My/Desktop/untitled/headers/Console.h
+string
+-
+
+C:/Users/My/Desktop/untitled/src/Console.cpp
+../headers/Console.h
+C:/Users/My/Desktop/untitled/headers/Console.h
+iostream
+-
+windows.h
+C:/Users/My/Desktop/untitled/src/windows.h
+stdio.h
+-
+conio.h
+-
+
