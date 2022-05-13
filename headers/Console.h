@@ -7,13 +7,17 @@
 
 
 #include <string>
+#include "Chapter.h"
 
 class Console {
     void smooth_cout(std::string text);
     bool getBoolInput();
+    Chapter* current_chapter;
 public:
     Console();
+    ~Console();
     void welcome();
+    void choose_chapter();
     bool ask_id_hint_needed(int count_incorrect, int hints);
 
 

@@ -176,6 +176,53 @@ bool Console::ask_id_hint_needed(int count_incorrect, int hints) {
 //}
 }
 
+void Console::choose_chapter() {
+    int whichSubject=0;
+    string eng_file;
+    string pl_file;
+
+    do{
+        cin>>whichSubject;
+        //whichSubject=_getche()-48;
+
+        switch(whichSubject){
+            case 1:
+                eng_file="engFamilyCoded.txt";
+                pl_file="polFamilyCoded.txt";
+                break;
+            case 2:
+                eng_file="engHomeCoded.txt";
+                pl_file="polHomeCoded.txt";
+                break;
+            case 3:
+                eng_file="engInHouseCoded.txt";
+                pl_file="polInHouseCoded.txt";
+                break;
+            case 4:
+                eng_file="engKitchenWareCoded.txt";
+                pl_file="polKitchenWareCoded.txt";
+                break;
+            case 5:
+                eng_file="English_words_part_1.txt";
+                pl_file="Polish_words_part_1.txt";
+                break;
+            case 6:
+                eng_file="English_words_part_2.txt";
+                pl_file="Polish_words_part_2.txt";
+                break;
+            case 7:
+                eng_file="eng_people.txt";
+                pl_file="pol_people.txt";
+                break;
+            default:
+                cout<<"Mistake in command\n	";
+                continue;
+        }
+    }while(whichSubject<1 || whichSubject>7);
+
+    current_chapter = new Chapter(pl_file, eng_file);
+}
+
 bool Console::getBoolInput() {
     int hints;
     do{
@@ -185,7 +232,7 @@ bool Console::getBoolInput() {
 
             if(hints==1){
                 cout << "Picked 1 (yes)";
-                cout << "<First Hint>";
+                cout << "<First Hint> \n";
 //                firstHint(currentEngWord, 0, globalUnveils, globalLetters);
 //
 //                if(answers>1)
@@ -198,7 +245,7 @@ bool Console::getBoolInput() {
             }
 
             else if(hints==0){
-                cout << "Picked 0 (no)";
+                cout << "Picked 0 (no) \n";
             }
 
             else{
@@ -208,4 +255,8 @@ bool Console::getBoolInput() {
         }while(hints!=0 && hints!=1);
 
     return hints;
+}
+
+Console::~Console() {
+    delete current_chapter;
 }

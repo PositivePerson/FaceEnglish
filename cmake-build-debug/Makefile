@@ -128,6 +128,30 @@ untitled/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/build
 .PHONY : untitled/fast
 
+src/Chapter.obj: src/Chapter.cpp.obj
+.PHONY : src/Chapter.obj
+
+# target to build an object file
+src/Chapter.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Chapter.cpp.obj
+.PHONY : src/Chapter.cpp.obj
+
+src/Chapter.i: src/Chapter.cpp.i
+.PHONY : src/Chapter.i
+
+# target to preprocess a source file
+src/Chapter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Chapter.cpp.i
+.PHONY : src/Chapter.cpp.i
+
+src/Chapter.s: src/Chapter.cpp.s
+.PHONY : src/Chapter.s
+
+# target to generate assembly for a file
+src/Chapter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Chapter.cpp.s
+.PHONY : src/Chapter.cpp.s
+
 src/Console.obj: src/Console.cpp.obj
 .PHONY : src/Console.obj
 
@@ -176,6 +200,30 @@ src/Produkt.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Produkt.cpp.s
 .PHONY : src/Produkt.cpp.s
 
+src/Word.obj: src/Word.cpp.obj
+.PHONY : src/Word.obj
+
+# target to build an object file
+src/Word.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Word.cpp.obj
+.PHONY : src/Word.cpp.obj
+
+src/Word.i: src/Word.cpp.i
+.PHONY : src/Word.i
+
+# target to preprocess a source file
+src/Word.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Word.cpp.i
+.PHONY : src/Word.cpp.i
+
+src/Word.s: src/Word.cpp.s
+.PHONY : src/Word.s
+
+# target to generate assembly for a file
+src/Word.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Word.cpp.s
+.PHONY : src/Word.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -209,12 +257,18 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... untitled
+	@echo ... src/Chapter.obj
+	@echo ... src/Chapter.i
+	@echo ... src/Chapter.s
 	@echo ... src/Console.obj
 	@echo ... src/Console.i
 	@echo ... src/Console.s
 	@echo ... src/Produkt.obj
 	@echo ... src/Produkt.i
 	@echo ... src/Produkt.s
+	@echo ... src/Word.obj
+	@echo ... src/Word.i
+	@echo ... src/Word.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
