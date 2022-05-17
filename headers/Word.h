@@ -10,11 +10,15 @@
 class Word {
     int hints = 0;
     int length;
-    std::string value;
+//    std::string value;
     int count_incorrect = 0;
 public:
+    std::string mValue = "abc";
+
+    Word();
     Word(std::string a);
     void info();
+    std::string get_value();
 };
 
 #endif //UNTITLED_WORD_H

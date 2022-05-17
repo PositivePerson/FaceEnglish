@@ -32,10 +32,10 @@ void Console::welcome() {
     cout<<"   1 - Family"<<'\n';
     cout<<"   2 - Home"<<'\n';
     cout<<"   3 - In the house"<<'\n';
-    cout<<"   4 - KitchenWare"<<'\n';
-    cout<<"   5 - People"<<'\n';
-    cout<<"   6 - Blended"<<'\n';
-    cout<<"   7 - Bank"<<'\n';
+//    cout<<"   4 - KitchenWare"<<'\n';
+//    cout<<"   5 - People"<<'\n';
+//    cout<<"   6 - Blended"<<'\n';
+//    cout<<"   7 - Bank"<<'\n';
     cout<<"			Ending round: 'end'\n	";
     cout<<"		Exit: 'exit'\n	";
 }
@@ -187,33 +187,33 @@ void Console::choose_chapter() {
 
         switch(whichSubject){
             case 1:
-                eng_file="engFamilyCoded.txt";
-                pl_file="polFamilyCoded.txt";
+                eng_file="engFamily.txt";
+                pl_file="polFamily.txt";
                 break;
             case 2:
-                eng_file="engHomeCoded.txt";
-                pl_file="polHomeCoded.txt";
+                eng_file="engHome.txt";
+                pl_file="polHome.txt";
                 break;
             case 3:
-                eng_file="engInHouseCoded.txt";
-                pl_file="polInHouseCoded.txt";
+                eng_file="engInHouse.txt";
+                pl_file="polInHouse.txt";
                 break;
-            case 4:
-                eng_file="engKitchenWareCoded.txt";
-                pl_file="polKitchenWareCoded.txt";
-                break;
-            case 5:
-                eng_file="English_words_part_1.txt";
-                pl_file="Polish_words_part_1.txt";
-                break;
-            case 6:
-                eng_file="English_words_part_2.txt";
-                pl_file="Polish_words_part_2.txt";
-                break;
-            case 7:
-                eng_file="eng_people.txt";
-                pl_file="pol_people.txt";
-                break;
+//            case 4:
+//                eng_file="engKitchenWare.txt";
+//                pl_file="polKitchenWare.txt";
+//                break;
+//            case 5:
+//                eng_file="English_words_part_1.txt";
+//                pl_file="Polish_words_part_1.txt";
+//                break;
+//            case 6:
+//                eng_file="English_words_part_2.txt";
+//                pl_file="Polish_words_part_2.txt";
+//                break;
+//            case 7:
+//                eng_file="eng_people.txt";
+//                pl_file="pol_people.txt";
+//                break;
             default:
                 cout<<"Mistake in command\n	";
                 continue;
