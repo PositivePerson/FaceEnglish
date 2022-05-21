@@ -3,6 +3,8 @@
 //
 
 #include "../headers/Chapter.h"
+#include "../headers/Polish_Word.h"
+#include "../headers/English_Word.h"
 #include <iostream>
 #include <fstream>
 //#include <cstddef>
@@ -53,9 +55,12 @@ void Chapter::fetch_lines(string pl_name, string eng_name) {
     ifstream EnglishWords(eng_name);
 
     while(getline(UrLanguage,temp_pl) && getline(EnglishWords,temp_eng)){
+        English_Word temp_eng_word(temp_eng);
+        Polish_Word temp_pl_word(temp_pl, temp_eng);
+
         pl_word.push_back(temp_pl);
         eng_words.push_back(temp_eng);
-        divide_words(temp_eng);
+//        divide_words(temp_eng);
     }
 }
 
@@ -74,7 +79,7 @@ void Chapter::fetch_lines(string pl_name, string eng_name) {
 //        }
 //    }while(position<50);
 //
-//    for(string i : temp){
-//        cout << "temp = " << i << endl;
-//    }
+////    for(string i : temp){
+////        cout << "temp = " << i << endl;
+////    }
 //}

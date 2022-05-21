@@ -13,12 +13,13 @@ class Word {
 //    std::string value;
     int count_incorrect = 0;
 public:
-    std::string mValue = "abc";
+    std::string value = "abc";
 
     Word();
     Word(std::string a);
     void info();
     std::string get_value();
+    void set_value(std::string argValue);
 };
 
 #endif //UNTITLED_WORD_H

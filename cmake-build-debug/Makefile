@@ -128,30 +128,6 @@ untitled/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/build
 .PHONY : untitled/fast
 
-headers/English_Word.obj: headers/English_Word.cpp.obj
-.PHONY : headers/English_Word.obj
-
-# target to build an object file
-headers/English_Word.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/headers/English_Word.cpp.obj
-.PHONY : headers/English_Word.cpp.obj
-
-headers/English_Word.i: headers/English_Word.cpp.i
-.PHONY : headers/English_Word.i
-
-# target to preprocess a source file
-headers/English_Word.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/headers/English_Word.cpp.i
-.PHONY : headers/English_Word.cpp.i
-
-headers/English_Word.s: headers/English_Word.cpp.s
-.PHONY : headers/English_Word.s
-
-# target to generate assembly for a file
-headers/English_Word.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/headers/English_Word.cpp.s
-.PHONY : headers/English_Word.cpp.s
-
 src/Chapter.obj: src/Chapter.cpp.obj
 .PHONY : src/Chapter.obj
 
@@ -199,6 +175,30 @@ src/Console.s: src/Console.cpp.s
 src/Console.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Console.cpp.s
 .PHONY : src/Console.cpp.s
+
+src/English_Word.obj: src/English_Word.cpp.obj
+.PHONY : src/English_Word.obj
+
+# target to build an object file
+src/English_Word.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/English_Word.cpp.obj
+.PHONY : src/English_Word.cpp.obj
+
+src/English_Word.i: src/English_Word.cpp.i
+.PHONY : src/English_Word.i
+
+# target to preprocess a source file
+src/English_Word.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/English_Word.cpp.i
+.PHONY : src/English_Word.cpp.i
+
+src/English_Word.s: src/English_Word.cpp.s
+.PHONY : src/English_Word.s
+
+# target to generate assembly for a file
+src/English_Word.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/English_Word.cpp.s
+.PHONY : src/English_Word.cpp.s
 
 src/Polish_Word.obj: src/Polish_Word.cpp.obj
 .PHONY : src/Polish_Word.obj
@@ -305,15 +305,15 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... untitled
-	@echo ... headers/English_Word.obj
-	@echo ... headers/English_Word.i
-	@echo ... headers/English_Word.s
 	@echo ... src/Chapter.obj
 	@echo ... src/Chapter.i
 	@echo ... src/Chapter.s
 	@echo ... src/Console.obj
 	@echo ... src/Console.i
 	@echo ... src/Console.s
+	@echo ... src/English_Word.obj
+	@echo ... src/English_Word.i
+	@echo ... src/English_Word.s
 	@echo ... src/Polish_Word.obj
 	@echo ... src/Polish_Word.i
 	@echo ... src/Polish_Word.s

@@ -3,11 +3,23 @@
 
 CMakeFiles/untitled.dir/src/Chapter.cpp.obj: \
  ../headers/Chapter.h \
+ ../headers/English_Word.h \
+ ../headers/Polish_Word.h \
+ ../headers/Word.h \
  ../src/Chapter.cpp
 CMakeFiles/untitled.dir/src/Console.cpp.obj: \
  ../headers/Chapter.h \
  ../headers/Console.h \
  ../src/Console.cpp
+CMakeFiles/untitled.dir/src/English_Word.cpp.obj: \
+ ../headers/English_Word.h \
+ ../headers/Word.h \
+ ../src/English_Word.cpp
+CMakeFiles/untitled.dir/src/Polish_Word.cpp.obj: \
+ ../headers/English_Word.h \
+ ../headers/Polish_Word.h \
+ ../headers/Word.h \
+ ../src/Polish_Word.cpp
 CMakeFiles/untitled.dir/src/Produkt.cpp.obj: \
  ../src/Produkt.cpp
 CMakeFiles/untitled.dir/src/Word.cpp.obj: \

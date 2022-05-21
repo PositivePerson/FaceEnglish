@@ -143,18 +143,18 @@ CMakeFiles/untitled.dir/src/Polish_Word.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled.dir/src/Polish_Word.cpp.s"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\My\Desktop\untitled\src\Polish_Word.cpp -o CMakeFiles\untitled.dir\src\Polish_Word.cpp.s
 
-CMakeFiles/untitled.dir/headers/English_Word.cpp.obj: CMakeFiles/untitled.dir/flags.make
-CMakeFiles/untitled.dir/headers/English_Word.cpp.obj: ../headers/English_Word.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\My\Desktop\untitled\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/untitled.dir/headers/English_Word.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\untitled.dir\headers\English_Word.cpp.obj -c C:\Users\My\Desktop\untitled\headers\English_Word.cpp
+CMakeFiles/untitled.dir/src/English_Word.cpp.obj: CMakeFiles/untitled.dir/flags.make
+CMakeFiles/untitled.dir/src/English_Word.cpp.obj: ../src/English_Word.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\My\Desktop\untitled\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/untitled.dir/src/English_Word.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\untitled.dir\src\English_Word.cpp.obj -c C:\Users\My\Desktop\untitled\src\English_Word.cpp
 
-CMakeFiles/untitled.dir/headers/English_Word.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled.dir/headers/English_Word.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\My\Desktop\untitled\headers\English_Word.cpp > CMakeFiles\untitled.dir\headers\English_Word.cpp.i
+CMakeFiles/untitled.dir/src/English_Word.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled.dir/src/English_Word.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\My\Desktop\untitled\src\English_Word.cpp > CMakeFiles\untitled.dir\src\English_Word.cpp.i
 
-CMakeFiles/untitled.dir/headers/English_Word.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled.dir/headers/English_Word.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\My\Desktop\untitled\headers\English_Word.cpp -o CMakeFiles\untitled.dir\headers\English_Word.cpp.s
+CMakeFiles/untitled.dir/src/English_Word.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled.dir/src/English_Word.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\My\Desktop\untitled\src\English_Word.cpp -o CMakeFiles\untitled.dir\src\English_Word.cpp.s
 
 # Object files for target untitled
 untitled_OBJECTS = \
@@ -164,7 +164,7 @@ untitled_OBJECTS = \
 "CMakeFiles/untitled.dir/src/Word.cpp.obj" \
 "CMakeFiles/untitled.dir/src/Chapter.cpp.obj" \
 "CMakeFiles/untitled.dir/src/Polish_Word.cpp.obj" \
-"CMakeFiles/untitled.dir/headers/English_Word.cpp.obj"
+"CMakeFiles/untitled.dir/src/English_Word.cpp.obj"
 
 # External object files for target untitled
 untitled_EXTERNAL_OBJECTS =
@@ -175,7 +175,7 @@ untitled.exe: CMakeFiles/untitled.dir/src/Console.cpp.obj
 untitled.exe: CMakeFiles/untitled.dir/src/Word.cpp.obj
 untitled.exe: CMakeFiles/untitled.dir/src/Chapter.cpp.obj
 untitled.exe: CMakeFiles/untitled.dir/src/Polish_Word.cpp.obj
-untitled.exe: CMakeFiles/untitled.dir/headers/English_Word.cpp.obj
+untitled.exe: CMakeFiles/untitled.dir/src/English_Word.cpp.obj
 untitled.exe: CMakeFiles/untitled.dir/build.make
 untitled.exe: CMakeFiles/untitled.dir/linklibs.rsp
 untitled.exe: CMakeFiles/untitled.dir/objects1.rsp

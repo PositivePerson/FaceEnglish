@@ -29,3 +29,6 @@ void Word::info()
 string Word::get_value() {
     return value;
 }
+void Word::set_value(string argValue) {
+    value = argValue;
+}

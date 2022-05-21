@@ -6,10 +6,12 @@
 #include <iostream>
 using namespace std;
 
-Polish_Word::Polish_Word(English_Word eng_line) {
+Polish_Word::Polish_Word(string argValue, English_Word eng_line) {
 //Polish_Word::Polish_Word(string eng_line) {
 //    void Chapter::divide_words(string line) {
 //        vector<string> temp;
+        set_value(argValue);
+
         std::size_t position = 51;
 
         do{
@@ -25,7 +27,7 @@ Polish_Word::Polish_Word(English_Word eng_line) {
             }
         }while(position<50);
 
-        for(string i : translations){
-            cout << "translations = " << i << endl;
+        for(English_Word i : translations){
+            cout << "translations = " << i.get_value() << endl;
         }
 }

@@ -11,7 +11,8 @@
 class English_Word: public Word {
     int tried_times = 0;
 public:
-    English_Word();
+//    English_Word();
+    using Word::Word;
     int get_tried_times();
     void substr(int start, int end);
     void erase(int start, int end);
