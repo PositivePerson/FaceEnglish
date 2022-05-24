@@ -33,3 +33,19 @@ string Word::get_value() {
 void Word::set_value(string argValue) {
     value = argValue;
 }
+
+int Word::get_incorrect_num() {
+    return incorrect_ans;
+}
+
+int Word::get_hints_num() {
+    return hints;
+}
+
+void Word::count_incorrect() {
+    incorrect_ans++;
+}
+
+void Word::count_hints() {
+    hints++;
+}

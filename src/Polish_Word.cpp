@@ -41,3 +41,7 @@ Polish_Word::Polish_Word(string argValue, English_Word eng_line) {
 void Polish_Word::setTaught(bool val) {
     taught = val;
 }
+
+std::vector<English_Word> Polish_Word::get_translations() {
+    return translations;
+}

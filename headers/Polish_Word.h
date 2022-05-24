@@ -17,6 +17,7 @@ public:
 //    Polish_Word(std::string eng_line);
     Polish_Word(std::string argValue, English_Word eng_line);
     void setTaught(bool val);
+    std::vector<English_Word> get_translations();
 };
 
 
