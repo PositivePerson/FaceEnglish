@@ -7,6 +7,7 @@
 #include "windows.h"
 #include <stdio.h>
 #include <conio.h>
+#include <cstdlib>
 using namespace std;
 
 Console::Console()
@@ -32,6 +33,7 @@ void Console::welcome() {
     cout<<"   1 - Family"<<'\n';
     cout<<"   2 - Home"<<'\n';
     cout<<"   3 - In the house"<<'\n';
+    cout<<"   4 - Test"<<'\n';
 //    cout<<"   4 - KitchenWare"<<'\n';
 //    cout<<"   5 - People"<<'\n';
 //    cout<<"   6 - Blended"<<'\n';
@@ -40,25 +42,25 @@ void Console::welcome() {
     cout<<"		Exit: 'exit'\n	";
 }
 
-bool Console::ask_id_hint_needed(int count_incorrect, int hints) {
+bool Console::ask_if_hint_needed(int count_incorrect, int hints) {
     bool answer;
 
     if(count_incorrect==2 || (count_incorrect>2 && hints==0)){
         //--------------first_hint_suggestion-----------------
         smooth_cout("Want a hint?");
         cout<<"	1 - yes			0 - no\n";
-        answer = getBoolInput();
+        answer = get_bool_input();
     }
     else if(count_incorrect==3 || (count_incorrect>3 && hints==1)) {
         //--------------second_hint_suggestion-----------------
         smooth_cout("	Do you want to get one more hint?\n");
         cout<<"	1 - yes			0 - no\n";
-        answer = getBoolInput();
+        answer = get_bool_input();
     }
     else if(count_incorrect>3 && hints==2) {
         cout << "	skip?\n";
         cout << "	1 - yes			0 - no\n";
-        answer = getBoolInput();
+        answer = get_bool_input();
     }
     return answer;
 //    if(count_incorrect==2 || (count_incorrect>2 && hints==0)){
@@ -198,6 +200,10 @@ void Console::choose_chapter() {
                 eng_file="engInHouse.txt";
                 pl_file="polInHouse.txt";
                 break;
+            case 4:
+                eng_file="engTest.txt";
+                pl_file="polTest.txt";
+                break;
 //            case 4:
 //                eng_file="engKitchenWare.txt";
 //                pl_file="polKitchenWare.txt";
@@ -221,9 +227,11 @@ void Console::choose_chapter() {
     }while(whichSubject<1 || whichSubject>7);
 
     current_chapter = new Chapter(pl_file, eng_file);
+
+    play();
 }
 
-bool Console::getBoolInput() {
+bool Console::get_bool_input() {
     int hints;
     do{
 //            cout<<"	";
@@ -257,6 +265,45 @@ bool Console::getBoolInput() {
     return hints;
 }
 
+void Console::play() {
+//    for(int i = 0 ; i < current_chapter->get_lines_amount() ; ++i){
+    for(auto word : current_chapter->pl_word){
+        cleanConsole();
+
+        cout << "Pl word 1" << "to po angielsku: \n" ;
+
+        const string user_ans = get_user_answer();
+        bool correct = check_if_answer_match(word.get_value(), user_ans);
+
+        if(!correct) {
+            const bool wanna_hint = ask_if_hint_needed(2, 1); // <----------------------------- temp static args
+
+            if(wanna_hint) cout << "The hint is ... *dead*";
+        }
+    }
+}
+
 Console::~Console() {
     delete current_chapter;
+}
+
+const string Console::get_user_answer() {
+    string answer = "";
+    cin >> answer;
+
+    if(answer == "exit") {
+        cout << "Typed in \"exit\" \n";
+        _Exit(0);
+    } else if(answer == "end")
+        cout << "Typed in \"end\" \n";
+    return answer;
+}
+
+void Console::cleanConsole() {
+    Sleep(200);
+    system("CLS");
+}
+
+bool Console::check_if_answer_match(string word, string answer) {
+    return word == answer;
 }

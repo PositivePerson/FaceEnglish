@@ -15,8 +15,9 @@ int English_Word::get_tried_times() {
     return tried_times;
 }
 
-void English_Word::substr(int start, int end) {
-    value.substr(start, end);
+std::string English_Word::substr(int start, int end) {
+//    value.substr(start, end);
+    return value.substr(start, end);
 }
 
 void English_Word::erase(int start, int end) {

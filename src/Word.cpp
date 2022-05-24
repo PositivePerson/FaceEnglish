@@ -7,11 +7,13 @@
 using namespace std;
 
 Word::Word(){
-    cout << "- First constructor (Word without argument) \n";
+    cout << "\n - First constructor (Word without argument) \n";
 }
 
 Word::Word(string a)
 {
+    cout << "\n\n";
+
     value = a;
     length = a.length();
 
@@ -20,10 +22,9 @@ Word::Word(string a)
 
 void Word::info()
 {
-    cout << "- First constructor (Word) \n";
     cout << "value = " << value << " \n";
-    cout << "length = " << length << " \n";
-    cout << "-------------------------- \n";
+//    cout << "length = " << length << " \n";
+//    cout << "-------------------------- \n";
 }
 
 string Word::get_value() {

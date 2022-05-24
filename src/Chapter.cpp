@@ -26,10 +26,10 @@ Chapter::Chapter(string pl_name, string eng_name)
 void Chapter::info()
 {
     cout << "========================= \n";
-    for(string i : eng_words){
-        cout << "i = " << i << endl;
-        lines_amount++;
-    }
+//    for(English_Word i : eng_words){
+//        cout << "i = " << i.get_value() << endl;
+//        lines_amount++;
+//    }
 //    cout << "pl_file_name = " << pl_file_name << " \n";
 //    cout << "eng_file_name = " << eng_file_name << " \n";
     cout << "lines_amount = " << lines_amount << " \n";
@@ -45,8 +45,8 @@ void Chapter::reset_counters() {
 }
 
 void Chapter::fetch_lines(string pl_name, string eng_name) {
-    string temp_pl;
-    string temp_eng;
+    string temp_pl_imp;
+    string temp_eng_imp;
 
 //    ifstream UrLanguage(pl_name + ".txt");
 //    ifstream EnglishWords(eng_name + ".txt");
@@ -54,14 +54,18 @@ void Chapter::fetch_lines(string pl_name, string eng_name) {
     ifstream UrLanguage(pl_name);
     ifstream EnglishWords(eng_name);
 
-    while(getline(UrLanguage,temp_pl) && getline(EnglishWords,temp_eng)){
-        English_Word temp_eng_word(temp_eng);
-        Polish_Word temp_pl_word(temp_pl, temp_eng);
+    while(getline(UrLanguage,temp_pl_imp) && getline(EnglishWords,temp_eng_imp)){
+        English_Word temp_eng_obj(temp_eng_imp);
+        Polish_Word temp_pl_obj(temp_pl_imp, temp_eng_obj);
 
-        pl_word.push_back(temp_pl);
-        eng_words.push_back(temp_eng);
+        pl_word.push_back(temp_pl_obj);
+        eng_words.push_back(temp_eng_obj);
 //        divide_words(temp_eng);
     }
+}
+
+int Chapter::get_lines_amount() {
+    return lines_amount;
 }
 
 //void Chapter::divide_words(string line) {

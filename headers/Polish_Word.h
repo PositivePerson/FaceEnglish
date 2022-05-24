@@ -10,12 +10,13 @@
 
 //class Polish_Word:public Word {
 class Polish_Word: public Word {
-    int eng_equals = 0;
+    unsigned int eng_equals = 0;
     bool taught = false;
     std::vector<English_Word> translations;
 public:
 //    Polish_Word(std::string eng_line);
     Polish_Word(std::string argValue, English_Word eng_line);
+    void setTaught(bool val);
 };
 
 

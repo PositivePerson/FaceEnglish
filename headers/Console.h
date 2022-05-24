@@ -11,17 +11,23 @@
 
 class Console {
     void smooth_cout(std::string text);
-    bool getBoolInput();
+    bool get_bool_input();
     Chapter* current_chapter;
 public:
     Console();
     ~Console();
     void welcome();
     void choose_chapter();
-    bool ask_id_hint_needed(int count_incorrect, int hints);
+    void play();
+    bool ask_if_hint_needed(int count_incorrect, int hints);
 
 
 //    void smooth_cout(std::__cxx11::basic_string<char> text);
+    const std::string get_user_answer();
+
+    void cleanConsole();
+
+    bool check_if_answer_match(std::string word, std::string answer);
 };
 
 

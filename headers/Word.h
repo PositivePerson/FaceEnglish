@@ -9,7 +9,7 @@
 
 class Word {
     int hints = 0;
-    int length;
+    unsigned int length;
 //    std::string value;
     int count_incorrect = 0;
 public:
