@@ -19,10 +19,11 @@ public:
     Word(std::string a);
     void info();
     std::string get_value();
-    void count_incorrect();
-    void count_hints();
     int get_incorrect_num();
     int get_hints_num();
+    int get_length();
+    void count_incorrect();
+    void count_hints();
     void set_value(std::string argValue);
 };
 

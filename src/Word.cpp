@@ -23,7 +23,7 @@ Word::Word(string a)
 void Word::info()
 {
     cout << "value = " << value << " \n";
-//    cout << "length = " << length << " \n";
+    cout << "length = " << length << " \n";
 //    cout << "-------------------------- \n";
 }
 
@@ -48,4 +48,8 @@ void Word::count_incorrect() {
 
 void Word::count_hints() {
     hints++;
+}
+
+int Word::get_length() {
+    return length;
 }

@@ -27,7 +27,9 @@ public:
     void clearConsole();
     bool check_if_answer_match(std::vector<English_Word> translations, std::string answer);
 
-    void handleHint(int incorrect, int hints, int hint_option);
+    void handleHint(int incorrect, int hints, int hint_option, std::vector<English_Word> translations);
+
+    void firstHint(English_Word word);
 };
 
 

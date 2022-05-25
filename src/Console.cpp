@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <conio.h>
 #include <cstdlib>
+#include <algorithm>
 using namespace std;
 
 Console::Console()
@@ -291,7 +292,7 @@ void Console::play() {
                 cout << "\n word.get_incorrect_num() : " << word.get_incorrect_num() << " \n word.get_hints_num(): " << word.get_hints_num() << "\n";
                 if(hint_option > 0) {
 //                    cout << "The hint is ... \n*dead* \n";
-                    handleHint(word.get_incorrect_num(), word.get_hints_num(), hint_option);
+                    handleHint(word.get_incorrect_num(), word.get_hints_num(), hint_option, word.get_translations());
 
                     word.count_hints();
                 }
@@ -326,7 +327,6 @@ bool Console::check_if_answer_match(vector<English_Word> translations, string an
     bool matched = false;
 
     cout << "\n ================ \n " << "check_if_answer_match\n" ;
-
     for(auto i : translations){
         cout << "word: " << i.get_value() << "\nanswer: " << answer << "\n" ;
 
@@ -335,22 +335,25 @@ bool Console::check_if_answer_match(vector<English_Word> translations, string an
             break;
         }
     }
-
     cout << "================ \n " ;
-
 
     return matched;
 }
 
-void Console::handleHint(int incorrect, int hints, int hint_option) {
-//            if(hint_option==1) {
-//                if(hint_option > 1) {
-//                    for(int i=1;i<answers;i++){
-//                            cout<<"	or	";
-//                            firstHint(currentEngWord, i, globalUnveils, globalLetters);
-//                        }
+void Console::handleHint(int incorrect, int hints, int hint_option, vector<English_Word> translations) {
+    cout << "\n -- calculating which hint to give for " << incorrect << " incorrects, and " << hints << " hints ...\" -- \n";
+
+            if(hint_option==1) {
+//                firstHint(translations.front());
+//                    if(translations.size() > 1) {
+                        for(auto word : translations){
+                            firstHint(word);
+                            cout<<"	or	";
+                        }
 //                    }
-//                }else if(hint_option==2){
+                }
+            else cout << endl << "                There is no option for configuration like that" << endl;
+//                else if(hint_option==2){
 //                secondHint(currentEngWord, 0, globalUnveils, globalLetters);
 //
 //                if(answers>1)
@@ -373,123 +376,24 @@ void Console::handleHint(int incorrect, int hints, int hint_option) {
 //            }
 //                            )
 
+}
 
+void Console::firstHint(English_Word word) {
+    string writing;
 
-//        if(incorrect==2 || (incorrect>2 && hints==0)){
-//        //--------------first_hint_suggestion-----------------
-//        smooth_cout("	Do you want to get a hint?\n");
-//
-//        cout<<"	1 - yes			0 - no\n";
-//
-//        do{
-//            cout<<"	";
-//            hints=_getche()-48;
-//            cout<<'\n';
-//
-//            if(hints==1){
-//                firstHint(currentEngWord, 0, globalUnveils, globalLetters);
-//
-//                if(answers>1)
-//                    for(int i=1;i<answers;i++){
-//                        cout<<"	or	";
-//                        firstHint(currentEngWord, i, globalUnveils, globalLetters);
-//                    }
-//
-//                cout<<'\n';
-//            }
-//
-//            else if(hints==0){
-//
-//            }
-//
-//            else{
-//                smooth_cout("	Choose 1 or 0 (again)\n");
-//            }
-//
-//        }while(hints!=0 && hints!=1);
-//    }
-//
-//    else if(incorrect==3 || (incorrect>3 && hints==1)){
-//        //--------------second_hint_suggestion-----------------
-//        smooth_cout("	Do you want to get one more hint?\n");
-//
-//        cout<<"	1 - yes			0 - no\n";
-//
-//        do{
-//            cout<<"	";
-//            hints=_getche()-47;
-//            cout<<'\n';
-//
-//            if(hints==2){
-//                secondHint(currentEngWord, 0, globalUnveils, globalLetters);
-//
-//                if(answers>1)
-//                    for(int i=1;i<answers;i++){
-//                        cout<<"	or	";
-//                        secondHint(currentEngWord, i, globalUnveils, globalLetters);
-//                    }
-//
-//                cout<<'\n';
-//            }
-//
-//            else if(hints==1){
-//
-//            }
-//
-//            else{
-//                smooth_cout("	Choose 1 or 0 (again)\n");
-//            }
-//
-//        }while(hints!=1 && hints!=2);
-//    }
-//
-//    else if(incorrect>3 && hints==2){
-//        cout<<"	skip?\n";
-//        cout<<"	1 - yes			0 - no\n";
-//
-//        do{
-//            cout<<"	";
-//            hints=_getche()-46;
-//            cout<<'\n';
-//
-//            if(hints==3){
-//                blanks++;
-//                wordsToLearn[toLearnIndex]++;
-//                for(int i=0;i<answers;i++) cout<<"	"<<currentEngWord[i]<<'\n';
-//                Sleep(500);
-//                system("CLS");
-//                goto surrender;
-//            }
-//
-//            else if(hints==2){
-//                //hints=1;
-//            }
-//
-//            else{
-//                smooth_cout("	Yes(1) or No(0)\n");
-//            }
-//
-//        }while(hints!=2 && hints!=3);
-//    }
-//    incorrect++;
-//}
-//else{
-////-----------------count-final-scores------------
-//if(incorrect==1){
-//spot_on++;
-//}
-//
-//else{
-//corrected++;
-//wordsToLearn[toLearnIndex]++;
-//}
-//
-//cout<<"	correct\n\n";
-//Sleep(175);
-//system("CLS");
-//}
+//    cout << endl << "*IN firstHint FUNCTION                         (length: " << word.get_length() << ")" << endl;
+    for(int i=0 ; i<word.get_length() ; i++) {
+        if(i == 0 || i == word.get_length() -1) {
+            writing += "_ ";
+        } else {
+//            cout << "word.get_value()[i] : " << word.get_value()[i] << endl;
+            writing += word.get_value()[i];
+            writing += ' ';
+        }
+    }
+//    cout << "*OUT firstHint FUNCTION" << endl;
 
-    cout << "\n -- calculating which hint to give for " << incorrect << " incorrects, and " << hints << " hints ...\" -- \n";
+    smooth_cout(writing);
 }
 
 Console::~Console() {
