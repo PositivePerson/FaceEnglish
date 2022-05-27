@@ -19,12 +19,20 @@ C:/Users/My/Desktop/untitled/headers/Polish_Word.h
 C:/Users/My/Desktop/untitled/headers/Console.h
 string
 -
+Hints.h
+C:/Users/My/Desktop/untitled/headers/Hints.h
 Chapter.h
 C:/Users/My/Desktop/untitled/headers/Chapter.h
 
 C:/Users/My/Desktop/untitled/headers/English_Word.h
 Word.h
 C:/Users/My/Desktop/untitled/headers/Word.h
+
+C:/Users/My/Desktop/untitled/headers/Hints.h
+vector
+-
+English_Word.h
+C:/Users/My/Desktop/untitled/headers/English_Word.h
 
 C:/Users/My/Desktop/untitled/headers/Polish_Word.h
 English_Word.h
@@ -50,5 +58,13 @@ conio.h
 cstdlib
 -
 algorithm
+-
+
+C:/Users/My/Desktop/untitled/src/Hints.cpp
+../headers/Hints.h
+C:/Users/My/Desktop/untitled/headers/Hints.h
+../headers/Console.h
+C:/Users/My/Desktop/untitled/headers/Console.h
+iostream
 -
 

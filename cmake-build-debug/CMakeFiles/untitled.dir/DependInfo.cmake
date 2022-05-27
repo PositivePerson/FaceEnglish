@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/My/Desktop/untitled/src/Chapter.cpp" "C:/Users/My/Desktop/untitled/cmake-build-debug/CMakeFiles/untitled.dir/src/Chapter.cpp.obj"
   "C:/Users/My/Desktop/untitled/src/Console.cpp" "C:/Users/My/Desktop/untitled/cmake-build-debug/CMakeFiles/untitled.dir/src/Console.cpp.obj"
   "C:/Users/My/Desktop/untitled/src/English_Word.cpp" "C:/Users/My/Desktop/untitled/cmake-build-debug/CMakeFiles/untitled.dir/src/English_Word.cpp.obj"
+  "C:/Users/My/Desktop/untitled/src/Hints.cpp" "C:/Users/My/Desktop/untitled/cmake-build-debug/CMakeFiles/untitled.dir/src/Hints.cpp.obj"
   "C:/Users/My/Desktop/untitled/src/Polish_Word.cpp" "C:/Users/My/Desktop/untitled/cmake-build-debug/CMakeFiles/untitled.dir/src/Polish_Word.cpp.obj"
   "C:/Users/My/Desktop/untitled/src/Produkt.cpp" "C:/Users/My/Desktop/untitled/cmake-build-debug/CMakeFiles/untitled.dir/src/Produkt.cpp.obj"
   "C:/Users/My/Desktop/untitled/src/Word.cpp" "C:/Users/My/Desktop/untitled/cmake-build-debug/CMakeFiles/untitled.dir/src/Word.cpp.obj"

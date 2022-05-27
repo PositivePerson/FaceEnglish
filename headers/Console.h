@@ -7,12 +7,14 @@
 
 
 #include <string>
+#include "Hints.h"
 #include "Chapter.h"
 
 class Console {
     void smooth_cout(std::string text);
     bool get_bool_input();
     Chapter* current_chapter;
+    Hints* hint;
 public:
     Console();
     ~Console();

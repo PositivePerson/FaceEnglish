@@ -89,6 +89,9 @@
 		<Unit filename="C:/Users/My/Desktop/untitled/headers/English_Word.h">
 			<Option target="untitled"/>
 		</Unit>
+		<Unit filename="C:/Users/My/Desktop/untitled/headers/Hints.h">
+			<Option target="untitled"/>
+		</Unit>
 		<Unit filename="C:/Users/My/Desktop/untitled/headers/Polish_Word.h">
 			<Option target="untitled"/>
 		</Unit>
@@ -105,6 +108,9 @@
 			<Option target="untitled"/>
 		</Unit>
 		<Unit filename="C:/Users/My/Desktop/untitled/src/English_Word.cpp">
+			<Option target="untitled"/>
+		</Unit>
+		<Unit filename="C:/Users/My/Desktop/untitled/src/Hints.cpp">
 			<Option target="untitled"/>
 		</Unit>
 		<Unit filename="C:/Users/My/Desktop/untitled/src/Polish_Word.cpp">

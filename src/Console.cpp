@@ -235,40 +235,31 @@ void Console::choose_chapter() {
     }while(whichSubject<1 || whichSubject>7);
 
     current_chapter = new Chapter(pl_file, eng_file);
+//    hint = new Hints(smooth_cout());
+    hint = new Hints();
 
     play();
 }
 
 bool Console::get_bool_input() {
     int hints;
+
     do{
-//            cout<<"	";
-            hints=_getche()-48;
-            cout<<'\n';
+        hints=_getche()-48;
+        cout<<'\n';
 
-            if(hints==1){
-                cout << "Picked 1 (yes)";
-                cout << "<First Hint> \n";
-//                firstHint(currentEngWord, 0, globalUnveils, globalLetters);
-//
-//                if(answers>1)
-//                    for(int i=1;i<answers;i++){
-//                        cout<<"	or	";
-//                        firstHint(currentEngWord, i, globalUnveils, globalLetters);
-//                    }
-//
-//                cout<<'\n';
-            }
+        if(hints==1){
+            cout << "Picked 1 (yes)";
+        }
 
-            else if(hints==0){
-                cout << "Picked 0 (no) \n";
-            }
+        else if(hints==0){
+            cout << "Picked 0 (no) \n";
+        }
 
-            else{
-                smooth_cout("	Choose 1 or 0 (again)\n");
-            }
-
-        }while(hints!=0 && hints!=1);
+        else{
+            smooth_cout("	Choose 1 or 0 (again)\n");
+        }
+     }while(hints!=0 && hints!=1);
 
     return hints;
 }
@@ -290,9 +281,11 @@ void Console::play() {
                 const int hint_option = ask_if_hint_needed(word.get_incorrect_num(), word.get_hints_num());
 
                 cout << "\n word.get_incorrect_num() : " << word.get_incorrect_num() << " \n word.get_hints_num(): " << word.get_hints_num() << "\n";
-                if(hint_option > 0) {
-//                    cout << "The hint is ... \n*dead* \n";
-                    handleHint(word.get_incorrect_num(), word.get_hints_num(), hint_option, word.get_translations());
+
+                if(hint_option == 3) continue;
+
+                else if(hint_option > 0) {
+                    hint->handleHint(word.get_incorrect_num(), word.get_hints_num(), hint_option, word.get_translations());
 
                     word.count_hints();
                 }
@@ -340,62 +333,7 @@ bool Console::check_if_answer_match(vector<English_Word> translations, string an
     return matched;
 }
 
-void Console::handleHint(int incorrect, int hints, int hint_option, vector<English_Word> translations) {
-    cout << "\n -- calculating which hint to give for " << incorrect << " incorrects, and " << hints << " hints ...\" -- \n";
-
-            if(hint_option==1) {
-//                firstHint(translations.front());
-//                    if(translations.size() > 1) {
-                        for(auto word : translations){
-                            firstHint(word);
-                            cout<<"	or	";
-                        }
-//                    }
-                }
-            else cout << endl << "                There is no option for configuration like that" << endl;
-//                else if(hint_option==2){
-//                secondHint(currentEngWord, 0, globalUnveils, globalLetters);
-//
-//                if(answers>1)
-//                    for(int i=1;i<answers;i++){
-//                        cout<<"	or	";
-//                        secondHint(currentEngWord, i, globalUnveils, globalLetters);
-//                    }
-//
-//                cout<<'\n';
-//            } else if(hint_option==3){
-//                secondHint(currentEngWord, 0, globalUnveils, globalLetters);
-//
-//                if(answers>1)
-//                    for(int i=1;i<answers;i++){
-//                        cout<<"	or	";
-//                        secondHint(currentEngWord, i, globalUnveils, globalLetters);
-//                    }
-//
-//                cout<<'\n';
-//            }
-//                            )
-
-}
-
-void Console::firstHint(English_Word word) {
-    string writing;
-
-//    cout << endl << "*IN firstHint FUNCTION                         (length: " << word.get_length() << ")" << endl;
-    for(int i=0 ; i<word.get_length() ; i++) {
-        if(i == 0 || i == word.get_length() -1) {
-            writing += "_ ";
-        } else {
-//            cout << "word.get_value()[i] : " << word.get_value()[i] << endl;
-            writing += word.get_value()[i];
-            writing += ' ';
-        }
-    }
-//    cout << "*OUT firstHint FUNCTION" << endl;
-
-    smooth_cout(writing);
-}
-
 Console::~Console() {
     delete current_chapter;
+    delete hint;
 }

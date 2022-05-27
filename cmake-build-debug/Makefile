@@ -200,6 +200,30 @@ src/English_Word.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/English_Word.cpp.s
 .PHONY : src/English_Word.cpp.s
 
+src/Hints.obj: src/Hints.cpp.obj
+.PHONY : src/Hints.obj
+
+# target to build an object file
+src/Hints.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Hints.cpp.obj
+.PHONY : src/Hints.cpp.obj
+
+src/Hints.i: src/Hints.cpp.i
+.PHONY : src/Hints.i
+
+# target to preprocess a source file
+src/Hints.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Hints.cpp.i
+.PHONY : src/Hints.cpp.i
+
+src/Hints.s: src/Hints.cpp.s
+.PHONY : src/Hints.s
+
+# target to generate assembly for a file
+src/Hints.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Hints.cpp.s
+.PHONY : src/Hints.cpp.s
+
 src/Polish_Word.obj: src/Polish_Word.cpp.obj
 .PHONY : src/Polish_Word.obj
 
@@ -314,6 +338,9 @@ help:
 	@echo ... src/English_Word.obj
 	@echo ... src/English_Word.i
 	@echo ... src/English_Word.s
+	@echo ... src/Hints.obj
+	@echo ... src/Hints.i
+	@echo ... src/Hints.s
 	@echo ... src/Polish_Word.obj
 	@echo ... src/Polish_Word.i
 	@echo ... src/Polish_Word.s
