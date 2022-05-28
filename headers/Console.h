@@ -7,8 +7,8 @@
 
 
 #include <string>
-#include "Hints.h"
 #include "Chapter.h"
+#include "Hints.h"
 
 class Console {
     void smooth_cout(std::string text);
