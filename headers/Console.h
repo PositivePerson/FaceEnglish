@@ -32,7 +32,8 @@ public:
     void handleHint(int incorrect, int hints, int hint_option, std::vector<English_Word> translations);
 
     void firstHint(English_Word word);
-};
 
+    void end_screen();
+};
 
 #endif //UNTITLED_CONSOLE_H

@@ -18,6 +18,7 @@ class Chapter {
     int lines_amount = 0;
     int correct = 0;
     int incorrect = 0;
+    int skipped = 0;
 public:
     Chapter(std::string pl_name, std::string eng_name);
     void reset_counters();
@@ -31,6 +32,14 @@ public:
 //    std::string eng_file_name;
 //    std::vector<std::string> pl_word;
     std::vector<Polish_Word> pl_word;
+
+    std::vector<Polish_Word> get_words_to_study();
+
+    int get_skipped_num();
+
+    int get_correct_num();
+
+    int get_spoton_num();
 };
 
 

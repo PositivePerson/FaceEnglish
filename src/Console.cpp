@@ -92,14 +92,12 @@ void Console::choose_chapter() {
     }while(whichSubject<1 || whichSubject>7);
 
     current_chapter = new Chapter(pl_file, eng_file);
-//    hint = new Hints(smooth_cout());
     hint = new Hints();
 
     play();
 }
 
 void Console::play() {
-//    for(int i = 0 ; i < current_chapter->get_lines_amount() ; ++i){
     for(auto word : current_chapter->pl_word){
 //        clearConsole();
 
@@ -128,8 +126,8 @@ void Console::play() {
 
                 word.count_incorrect();
             } else if(correct) {
-                cout << "That's right answer!" << endl;
-                system("PAUSE");
+                cout << "That's right!" << endl;
+                Sleep(500);
             }
         } while (!correct);
     }
@@ -142,9 +140,17 @@ const string Console::get_user_answer() {
     if(answer == "exit") {
         cout << "Typed in \"exit\" \n";
         _Exit(0);
-    } else if(answer == "end")
+    }
+    else if(answer == "end") {
         cout << "Typed in \"end\" \n";
-    return answer;
+
+//          clearConsole();
+            end_screen();
+            system("PAUSE");
+            _Exit(0);
+    }
+    else
+        return answer;
 }
 
 void Console::clearConsole() {
@@ -155,18 +161,48 @@ void Console::clearConsole() {
 bool Console::check_if_answer_match(vector<English_Word> translations, string answer ) {
     bool matched = false;
 
-    cout << "\n ================ \n " << "check_if_answer_match\n" ;
+    cout << endl << "==== check_if_answer_match ====" << endl ;
+    cout << "words: ";
     for(auto i : translations){
-        cout << "word: " << i.get_value() << "\nanswer: " << answer << "\n" ;
+        cout << i.get_value() << ", ";
 
         if(i.get_value() == answer){
             matched = true;
             break;
         }
     }
-    cout << "================ \n " ;
+    cout << endl << "answer: " << answer << endl ;
+    cout << "============================ \n " ;
 
     return matched;
+}
+
+void Console::end_screen(){
+    cout << endl;
+
+    cout<<" Spot-on: "<<current_chapter-> get_spoton_num() << endl;
+    cout<<" Corrected: "<< current_chapter->get_correct_num() << endl;
+    cout<<" Skipped: "<< current_chapter->get_skipped_num() << endl;
+
+    cout<<"\n\n";
+
+    const string temp =" Words to learn:";
+    smooth_cout(temp);
+    cout << endl;
+
+//    for(int i=0;i<toLearnIndex;i++){
+    for(auto word : current_chapter->get_words_to_study()){
+//        if(wordsToLearn[i]==1){
+
+        const string temp = word.get_value();
+        smooth_cout(temp);
+        cout << endl;
+//            writing="  "+ urWordsToLearn[i] + "\n";
+//            write(writing, 20/(corrected+blanks));
+//        }
+    }
+
+    cout<<"\n	1 - face all again		2 - face described words		3 - exit\n";
 }
 
 Console::~Console() {

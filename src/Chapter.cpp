@@ -68,6 +68,22 @@ int Chapter::get_lines_amount() {
     return lines_amount;
 }
 
+vector<Polish_Word> Chapter::get_words_to_study() {
+    return to_study;
+};
+
+int Chapter::get_spoton_num() {
+    return incorrect;
+}
+
+int Chapter::get_correct_num() {
+    return correct;
+}
+
+int Chapter::get_skipped_num() {
+    return skipped;
+}
+
 //void Chapter::divide_words(string line) {
 //    vector<string> temp;
 //    std::size_t position = 51;
