@@ -11,7 +11,6 @@ class Word {
     int hints = 0;
     unsigned int length;
 //    std::string value;
-    int incorrect_ans = 0;
 public:
     std::string value = "abc";
 
@@ -19,10 +18,8 @@ public:
     Word(std::string a);
     void info();
     std::string get_value();
-    int get_incorrect_num();
     int get_hints_num();
     int get_length();
-    void count_incorrect();
     void count_hints();
     void set_value(std::string argValue);
 };

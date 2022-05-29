@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/untitled.dir/src/Chapter.cpp.obj"
   "CMakeFiles/untitled.dir/src/Console.cpp.obj"
+  "CMakeFiles/untitled.dir/src/Counter.cpp.obj"
   "CMakeFiles/untitled.dir/src/English_Word.cpp.obj"
   "CMakeFiles/untitled.dir/src/Hints.cpp.obj"
   "CMakeFiles/untitled.dir/src/Polish_Word.cpp.obj"

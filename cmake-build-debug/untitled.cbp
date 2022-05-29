@@ -86,6 +86,9 @@
 		<Unit filename="C:/Users/My/Desktop/untitled/headers/Console.h">
 			<Option target="untitled"/>
 		</Unit>
+		<Unit filename="C:/Users/My/Desktop/untitled/headers/Counter.h">
+			<Option target="untitled"/>
+		</Unit>
 		<Unit filename="C:/Users/My/Desktop/untitled/headers/English_Word.h">
 			<Option target="untitled"/>
 		</Unit>
@@ -105,6 +108,9 @@
 			<Option target="untitled"/>
 		</Unit>
 		<Unit filename="C:/Users/My/Desktop/untitled/src/Console.cpp">
+			<Option target="untitled"/>
+		</Unit>
+		<Unit filename="C:/Users/My/Desktop/untitled/src/Counter.cpp">
 			<Option target="untitled"/>
 		</Unit>
 		<Unit filename="C:/Users/My/Desktop/untitled/src/English_Word.cpp">

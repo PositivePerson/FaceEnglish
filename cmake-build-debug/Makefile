@@ -176,6 +176,30 @@ src/Console.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Console.cpp.s
 .PHONY : src/Console.cpp.s
 
+src/Counter.obj: src/Counter.cpp.obj
+.PHONY : src/Counter.obj
+
+# target to build an object file
+src/Counter.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Counter.cpp.obj
+.PHONY : src/Counter.cpp.obj
+
+src/Counter.i: src/Counter.cpp.i
+.PHONY : src/Counter.i
+
+# target to preprocess a source file
+src/Counter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Counter.cpp.i
+.PHONY : src/Counter.cpp.i
+
+src/Counter.s: src/Counter.cpp.s
+.PHONY : src/Counter.s
+
+# target to generate assembly for a file
+src/Counter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Counter.cpp.s
+.PHONY : src/Counter.cpp.s
+
 src/English_Word.obj: src/English_Word.cpp.obj
 .PHONY : src/English_Word.obj
 
@@ -335,6 +359,9 @@ help:
 	@echo ... src/Console.obj
 	@echo ... src/Console.i
 	@echo ... src/Console.s
+	@echo ... src/Counter.obj
+	@echo ... src/Counter.i
+	@echo ... src/Counter.s
 	@echo ... src/English_Word.obj
 	@echo ... src/English_Word.i
 	@echo ... src/English_Word.s

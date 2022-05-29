@@ -9,6 +9,7 @@
 #include <string>
 #include "Chapter.h"
 #include "Hints.h"
+#include "Counter.h"
 
 class Console {
     void smooth_cout(std::string text);
@@ -21,7 +22,6 @@ public:
     void welcome();
     void choose_chapter();
     void play();
-    int ask_if_hint_needed(int count_incorrect, int hints);
 
 
 //    void smooth_cout(std::__cxx11::basic_string<char> text);
@@ -29,11 +29,9 @@ public:
     void clearConsole();
     bool check_if_answer_match(std::vector<English_Word> translations, std::string answer);
 
-    void handleHint(int incorrect, int hints, int hint_option, std::vector<English_Word> translations);
-
-    void firstHint(English_Word word);
-
     void end_screen();
+
+    char get_char_input();
 };
 
 #endif //UNTITLED_CONSOLE_H

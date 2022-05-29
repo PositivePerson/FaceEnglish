@@ -42,6 +42,18 @@ void Polish_Word::setTaught(bool val) {
     taught = val;
 }
 
+int Polish_Word::get_incorrect_num() {
+    return incorrect_ans;
+}
+
+void Polish_Word::count_incorrect() {
+    incorrect_ans++;
+}
+
+//void Polish_Word::set_fault() {
+//    if(faultless) faultless = false;
+//}
+
 std::vector<English_Word> Polish_Word::get_translations() {
     return translations;
 }

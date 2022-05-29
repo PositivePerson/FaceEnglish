@@ -19,6 +19,8 @@ Chapter::Chapter(string pl_name, string eng_name)
 //    pl_file_name = pl_name;
 //    eng_file_name = eng_name;
 
+//    counter = new Counter();
+
     fetch_lines(pl_name, eng_name);
     info();
 };
@@ -33,15 +35,9 @@ void Chapter::info()
 //    cout << "pl_file_name = " << pl_file_name << " \n";
 //    cout << "eng_file_name = " << eng_file_name << " \n";
     cout << "lines_amount = " << lines_amount << " \n";
-    cout << "correct = " << correct << " \n";
-    cout << "incorrect = " << incorrect << " \n";
+    cout << "correct = " << counter.get_correct_num() << " \n";
+    cout << "incorrect = " << counter.get_incorrect_num() << " \n";
     cout << "========================= \n";
-}
-
-void Chapter::reset_counters() {
-    lines_amount = 0;
-    correct = 0;
-    incorrect = 0;
 }
 
 void Chapter::fetch_lines(string pl_name, string eng_name) {
@@ -64,25 +60,42 @@ void Chapter::fetch_lines(string pl_name, string eng_name) {
     }
 }
 
+void Chapter::set_word_to_study(Polish_Word word) {
+    to_study.push_back(word);
+}
+
+void Chapter::reset_to_study() {
+    to_study.clear();
+}
+
+void Chapter::filter_to_incorrect() {
+    pl_word = to_study;
+    reset_to_study();
+}
+
 int Chapter::get_lines_amount() {
     return lines_amount;
 }
+
+vector<Polish_Word> Chapter::get_pl_words() {
+    return pl_word;
+};
 
 vector<Polish_Word> Chapter::get_words_to_study() {
     return to_study;
 };
 
-int Chapter::get_spoton_num() {
-    return incorrect;
-}
-
-int Chapter::get_correct_num() {
-    return correct;
-}
-
-int Chapter::get_skipped_num() {
-    return skipped;
-}
+//int Chapter::get_correct_num() {
+//    return counter.get_correct_num();
+//}
+//
+//int Chapter::get_incorrect_num() {
+//    return counter.get_incorrect_num();
+//}
+//
+//int Chapter::get_skipped_num() {
+//    return counter.get_skipped_num();
+//}
 
 //void Chapter::divide_words(string line) {
 //    vector<string> temp;
@@ -103,3 +116,7 @@ int Chapter::get_skipped_num() {
 ////        cout << "temp = " << i << endl;
 ////    }
 //}
+
+Chapter::~Chapter() {
+//    delete counter;
+}

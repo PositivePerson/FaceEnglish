@@ -98,39 +98,60 @@ void Console::choose_chapter() {
 }
 
 void Console::play() {
-    for(auto word : current_chapter->pl_word){
+    for(auto word : current_chapter->get_pl_words()){
 //        clearConsole();
 
         cout << word.get_value() << " to po angielsku: " << endl ;
         string user_ans;
         bool correct = false;
 
+        int hint_option;
         do{
             user_ans = get_user_answer();
             correct = check_if_answer_match(word.get_translations(), user_ans);
 
             if(!correct) {
-                const int hint_option = hint->ask_if_hint_needed(word.get_incorrect_num(), word.get_hints_num());
+                hint_option = hint->ask_if_hint_needed(word.get_incorrect_num(), word.get_hints_num());
 
                 cout << endl;
                 cout << " word.get_incorrect_num() : " << word.get_incorrect_num() << endl;
                 cout << "  word.get_hints_num(): " << word.get_hints_num() << endl;
 
-                if(hint_option == 3) break;
+                if(hint_option == 3) {
+                    current_chapter->counter.add_skipped();
+                    break;
+                }
 
                 else if(hint_option > 0) {
-                    hint->handleHint(word.get_incorrect_num(), word.get_hints_num(), hint_option, word.get_translations());
+                    hint->handleHint(word.get_incorrect_num(), word.get_hints_num(), hint_option,  word.get_translations());
 
+//                    word.set_fault();
                     word.count_hints();
                 }
 
                 word.count_incorrect();
             } else if(correct) {
                 cout << "That's right!" << endl;
+
+//                current_chapter->counter.add_correct();
                 Sleep(500);
             }
         } while (!correct);
+
+        if(word.get_incorrect_num() == 0) {
+            current_chapter->counter.add_correct();
+        }
+        else {
+            current_chapter->set_word_to_study(word);
+
+            if(hint_option != 3) {
+
+                current_chapter->counter.add_incorrect();
+            }
+        }
     }
+
+    end_screen();
 }
 
 const string Console::get_user_answer() {
@@ -178,34 +199,68 @@ bool Console::check_if_answer_match(vector<English_Word> translations, string an
 }
 
 void Console::end_screen(){
+
+    cout << endl;
+    cout<<" Spot-on: "<<current_chapter->counter.get_incorrect_num() << endl;
+    cout<<" Faultless: "<< current_chapter->counter.get_correct_num() << endl;
+    cout<<" Skipped: "<< current_chapter->counter.get_skipped_num() << endl;
+    cout<<" From: "<< current_chapter->get_lines_amount() << " words" << endl;
+    cout<< endl << endl;
+
+    smooth_cout(" Words to learn:");
     cout << endl;
 
-    cout<<" Spot-on: "<<current_chapter-> get_spoton_num() << endl;
-    cout<<" Corrected: "<< current_chapter->get_correct_num() << endl;
-    cout<<" Skipped: "<< current_chapter->get_skipped_num() << endl;
-
-    cout<<"\n\n";
-
-    const string temp =" Words to learn:";
-    smooth_cout(temp);
-    cout << endl;
-
-//    for(int i=0;i<toLearnIndex;i++){
     for(auto word : current_chapter->get_words_to_study()){
-//        if(wordsToLearn[i]==1){
-
         const string temp = word.get_value();
-        smooth_cout(temp);
+//        smooth_cout(temp);
+        cout << temp;
         cout << endl;
-//            writing="  "+ urWordsToLearn[i] + "\n";
-//            write(writing, 20/(corrected+blanks));
-//        }
     }
 
-    cout<<"\n	1 - face all again		2 - face described words		3 - exit\n";
+    cout << endl;
+    cout<<"	1 - face all again		";
+    if(current_chapter->counter.get_incorrect_num() > 0) cout << "2 - face described words";
+    cout << "		3 - exit";
+    cout << endl;
+
+    char input = get_char_input();
+
+//        clearConsole();
+    if(input == '1'){
+        current_chapter->reset_to_study();
+        current_chapter->counter.reset();
+        play();
+    }
+
+    if(input == '2'){
+        current_chapter->filter_to_incorrect();
+        current_chapter->counter.reset();
+        play();
+    }
+
+    if(input == '3'){
+        smooth_cout("See ya");
+        cout << endl;
+
+        system("PAUSE");
+        _Exit(0);
+    }
+}
+
+char Console::get_char_input() {
+    char choice;
+
+    do{
+        choice=_getche();
+        cout << endl << "Choice = " << choice << endl;
+    }while(choice<'1' || choice>'3');
+
+    return choice;
 }
 
 Console::~Console() {
+    cout << "--------------- C O N S O L E       D E S T R U C T O R ---------------";
+
     delete current_chapter;
     delete hint;
 }

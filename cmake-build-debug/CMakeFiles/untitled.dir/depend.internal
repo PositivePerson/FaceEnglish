@@ -3,6 +3,7 @@
 
 CMakeFiles/untitled.dir/src/Chapter.cpp.obj
  C:/Users/My/Desktop/untitled/headers/Chapter.h
+ C:/Users/My/Desktop/untitled/headers/Counter.h
  C:/Users/My/Desktop/untitled/headers/English_Word.h
  C:/Users/My/Desktop/untitled/headers/Polish_Word.h
  C:/Users/My/Desktop/untitled/headers/Word.h
@@ -10,11 +11,15 @@ CMakeFiles/untitled.dir/src/Chapter.cpp.obj
 CMakeFiles/untitled.dir/src/Console.cpp.obj
  C:/Users/My/Desktop/untitled/headers/Chapter.h
  C:/Users/My/Desktop/untitled/headers/Console.h
+ C:/Users/My/Desktop/untitled/headers/Counter.h
  C:/Users/My/Desktop/untitled/headers/English_Word.h
  C:/Users/My/Desktop/untitled/headers/Hints.h
  C:/Users/My/Desktop/untitled/headers/Polish_Word.h
  C:/Users/My/Desktop/untitled/headers/Word.h
  C:/Users/My/Desktop/untitled/src/Console.cpp
+CMakeFiles/untitled.dir/src/Counter.cpp.obj
+ C:/Users/My/Desktop/untitled/headers/Counter.h
+ C:/Users/My/Desktop/untitled/src/Counter.cpp
 CMakeFiles/untitled.dir/src/English_Word.cpp.obj
  C:/Users/My/Desktop/untitled/headers/English_Word.h
  C:/Users/My/Desktop/untitled/headers/Word.h
@@ -37,6 +42,7 @@ CMakeFiles/untitled.dir/src/Word.cpp.obj
 CMakeFiles/untitled.dir/src/main.cpp.obj
  C:/Users/My/Desktop/untitled/headers/Chapter.h
  C:/Users/My/Desktop/untitled/headers/Console.h
+ C:/Users/My/Desktop/untitled/headers/Counter.h
  C:/Users/My/Desktop/untitled/headers/English_Word.h
  C:/Users/My/Desktop/untitled/headers/Hints.h
  C:/Users/My/Desktop/untitled/headers/Polish_Word.h

@@ -3,6 +3,7 @@
 
 CMakeFiles/untitled.dir/src/Chapter.cpp.obj: \
  ../headers/Chapter.h \
+ ../headers/Counter.h \
  ../headers/English_Word.h \
  ../headers/Polish_Word.h \
  ../headers/Word.h \
@@ -10,11 +11,15 @@ CMakeFiles/untitled.dir/src/Chapter.cpp.obj: \
 CMakeFiles/untitled.dir/src/Console.cpp.obj: \
  ../headers/Chapter.h \
  ../headers/Console.h \
+ ../headers/Counter.h \
  ../headers/English_Word.h \
  ../headers/Hints.h \
  ../headers/Polish_Word.h \
  ../headers/Word.h \
  ../src/Console.cpp
+CMakeFiles/untitled.dir/src/Counter.cpp.obj: \
+ ../headers/Counter.h \
+ ../src/Counter.cpp
 CMakeFiles/untitled.dir/src/English_Word.cpp.obj: \
  ../headers/English_Word.h \
  ../headers/Word.h \
@@ -37,6 +42,7 @@ CMakeFiles/untitled.dir/src/Word.cpp.obj: \
 CMakeFiles/untitled.dir/src/main.cpp.obj: \
  ../headers/Chapter.h \
  ../headers/Console.h \
+ ../headers/Counter.h \
  ../headers/English_Word.h \
  ../headers/Hints.h \
  ../headers/Polish_Word.h \
