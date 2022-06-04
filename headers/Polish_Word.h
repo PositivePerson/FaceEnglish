@@ -20,9 +20,14 @@ public:
     Polish_Word(std::string argValue, English_Word eng_line);
     void setTaught(bool val);
     void set_fault();
+    void info();
     int get_incorrect_num();
     void count_incorrect();
     std::vector<English_Word> get_translations();
+    void reset_translations_counters();
+
+    void add_incorrect_eng();
+    void operator= (const Polish_Word &D );
 };
 
 

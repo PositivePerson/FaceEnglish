@@ -111,11 +111,18 @@ void Console::play() {
             correct = check_if_answer_match(word.get_translations(), user_ans);
 
             if(!correct) {
+                word.add_incorrect_eng();
+            }
+            if(!correct && word.get_incorrect_num() < 2) {
+                cout << "Try again:" << endl;
+                word.count_incorrect();
+            }
+            else if(!correct) {
                 hint_option = hint->ask_if_hint_needed(word.get_incorrect_num(), word.get_hints_num());
 
-                cout << endl;
-                cout << " word.get_incorrect_num() : " << word.get_incorrect_num() << endl;
-                cout << "  word.get_hints_num(): " << word.get_hints_num() << endl;
+//                cout << endl;
+//                cout << " word.get_incorrect_num() : " << word.get_incorrect_num() << endl;
+//                cout << "  word.get_hints_num(): " << word.get_hints_num() << endl;
 
                 if(hint_option == 3) {
                     current_chapter->counter.add_skipped();
@@ -125,7 +132,6 @@ void Console::play() {
                 else if(hint_option > 0) {
                     hint->handleHint(word.get_incorrect_num(), word.get_hints_num(), hint_option,  word.get_translations());
 
-//                    word.set_fault();
                     word.count_hints();
                 }
 
@@ -142,7 +148,8 @@ void Console::play() {
             current_chapter->counter.add_correct();
         }
         else {
-            current_chapter->set_word_to_study(word);
+            cout << "Original obj destination: " << &(word.get_translations()[0]) << endl;
+            current_chapter->set_word_to_study(&word);
 
             if(hint_option != 3) {
 
@@ -211,15 +218,19 @@ void Console::end_screen(){
     cout << endl;
 
     for(auto word : current_chapter->get_words_to_study()){
-        const string temp = word.get_value();
-//        smooth_cout(temp);
-        cout << temp;
-        cout << endl;
+//        const string temp = word.get_value();
+//        cout << temp;
+//        cout << endl;
+
+//    cout << "Word";
+        for(auto eng_word : word.get_translations()) {
+            cout << eng_word << endl;
+        }
     }
 
     cout << endl;
-    cout<<"	1 - face all again		";
-    if(current_chapter->counter.get_incorrect_num() > 0) cout << "2 - face described words";
+    if(current_chapter->get_lines_amount() == current_chapter->get_pl_words().size()) cout<<"	1 - face all again		";
+    if(current_chapter->counter.get_incorrect_num() > 0 || current_chapter->counter.get_skipped_num() > 0) cout << "2 - face described words";
     cout << "		3 - exit";
     cout << endl;
 
@@ -252,8 +263,9 @@ char Console::get_char_input() {
 
     do{
         choice=_getche();
-        cout << endl << "Choice = " << choice << endl;
+//        cout << endl << "Choice = " << choice << endl;
     }while(choice<'1' || choice>'3');
+    cout << endl;
 
     return choice;
 }

@@ -6,40 +6,12 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/My/Desktop/untitled/headers/Chapter.h
-string
--
+C:/Users/My/Desktop/untitled/headers/English_Word.h
 vector
 -
-English_Word.h
-C:/Users/My/Desktop/untitled/headers/English_Word.h
-Polish_Word.h
-C:/Users/My/Desktop/untitled/headers/Polish_Word.h
-Counter.h
-C:/Users/My/Desktop/untitled/headers/Counter.h
-
-C:/Users/My/Desktop/untitled/headers/Console.h
-string
--
-Chapter.h
-C:/Users/My/Desktop/untitled/headers/Chapter.h
-Hints.h
-C:/Users/My/Desktop/untitled/headers/Hints.h
-Counter.h
-C:/Users/My/Desktop/untitled/headers/Counter.h
-
-C:/Users/My/Desktop/untitled/headers/Counter.h
-
-C:/Users/My/Desktop/untitled/headers/English_Word.h
 Word.h
 C:/Users/My/Desktop/untitled/headers/Word.h
 
-C:/Users/My/Desktop/untitled/headers/Hints.h
-vector
--
-English_Word.h
-C:/Users/My/Desktop/untitled/headers/English_Word.h
-
 C:/Users/My/Desktop/untitled/headers/Polish_Word.h
 English_Word.h
 C:/Users/My/Desktop/untitled/headers/English_Word.h
@@ -50,19 +22,17 @@ C:/Users/My/Desktop/untitled/headers/Word.h
 string
 -
 
-C:/Users/My/Desktop/untitled/src/Console.cpp
-../headers/Console.h
-C:/Users/My/Desktop/untitled/headers/Console.h
+C:/Users/My/Desktop/untitled/src/English_Word.cpp
+../headers/English_Word.h
+C:/Users/My/Desktop/untitled/headers/English_Word.h
 iostream
 -
-windows.h
-C:/Users/My/Desktop/untitled/src/windows.h
-stdio.h
+vector
 -
-conio.h
--
-cstdlib
--
-algorithm
+
+C:/Users/My/Desktop/untitled/src/Polish_Word.cpp
+../headers/Polish_Word.h
+C:/Users/My/Desktop/untitled/headers/Polish_Word.h
+iostream
 -
 

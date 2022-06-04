@@ -28,12 +28,6 @@ Chapter::Chapter(string pl_name, string eng_name)
 void Chapter::info()
 {
     cout << "========================= \n";
-//    for(English_Word i : eng_words){
-//        cout << "i = " << i.get_value() << endl;
-//        lines_amount++;
-//    }
-//    cout << "pl_file_name = " << pl_file_name << " \n";
-//    cout << "eng_file_name = " << eng_file_name << " \n";
     cout << "lines_amount = " << lines_amount << " \n";
     cout << "correct = " << counter.get_correct_num() << " \n";
     cout << "incorrect = " << counter.get_incorrect_num() << " \n";
@@ -56,12 +50,15 @@ void Chapter::fetch_lines(string pl_name, string eng_name) {
 
         pl_word.push_back(temp_pl_obj);
         eng_words.push_back(temp_eng_obj);
+
+        lines_amount++;
 //        divide_words(temp_eng);
     }
 }
 
-void Chapter::set_word_to_study(Polish_Word word) {
-    to_study.push_back(word);
+void Chapter::set_word_to_study(Polish_Word *word) {
+    cout << "Copied obj destination: " << &((*word).get_translations()[0]) << endl;
+    to_study.push_back(*word);
 }
 
 void Chapter::reset_to_study() {
@@ -69,7 +66,17 @@ void Chapter::reset_to_study() {
 }
 
 void Chapter::filter_to_incorrect() {
-    pl_word = to_study;
+    pl_word.clear();
+    for(auto word : to_study) {
+        word.reset_translations_counters();
+
+        const Polish_Word temp = word;
+        pl_word.push_back(temp);
+    }
+
+// It works, but lets use OPERATOR= overload
+//    pl_word = to_study;
+
     reset_to_study();
 }
 
@@ -85,37 +92,9 @@ vector<Polish_Word> Chapter::get_words_to_study() {
     return to_study;
 };
 
-//int Chapter::get_correct_num() {
-//    return counter.get_correct_num();
-//}
-//
-//int Chapter::get_incorrect_num() {
-//    return counter.get_incorrect_num();
-//}
-//
-//int Chapter::get_skipped_num() {
-//    return counter.get_skipped_num();
-//}
-
-//void Chapter::divide_words(string line) {
-//    vector<string> temp;
-//    std::size_t position = 51;
-//
-//    do{
-//        position = line.find("OR");
-//        if(position<50){
-//            temp.push_back(line.substr(0, position-1));
-//            line.erase(0, position+3);
-//        }
-//        else{
-//            temp.push_back(line);
-//        }
-//    }while(position<50);
-//
-////    for(string i : temp){
-////        cout << "temp = " << i << endl;
-////    }
-//}
+//Polish_Word operator+(Polish_Word const &a, Polish_Word const &b) {
+//    return Polish_Word(a);
+//};
 
 Chapter::~Chapter() {
 //    delete counter;

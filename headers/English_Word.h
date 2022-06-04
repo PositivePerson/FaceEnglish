@@ -6,6 +6,7 @@
 #define UNTITLED_ENGLISH_WORD_H
 
 
+#include <vector>
 #include "Word.h"
 
 class English_Word: public Word {
@@ -13,10 +14,13 @@ class English_Word: public Word {
 public:
 //    English_Word();
     using Word::Word;
-    int get_tried_times();
+    int reset();
     std::string substr(int start, int end);
     void erase(int start, int end);
     size_t find(std::string phrase);
+    friend std::ostream& operator<<(std::ostream &os, English_Word &D);
+
+    void add_incorrect();
 };
 
 

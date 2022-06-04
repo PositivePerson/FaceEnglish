@@ -4,15 +4,12 @@
 
 #include "../headers/English_Word.h"
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
-//English_Word::English_Word() {
-//    cout << "- First constructor (English_Word) \n";
-//}
-
-int English_Word::get_tried_times() {
-    return tried_times;
+int English_Word::reset() {
+    return tried_times = 0;
 }
 
 std::string English_Word::substr(int start, int end) {
@@ -27,4 +24,22 @@ void English_Word::erase(int start, int end) {
 size_t English_Word::find(string phrase) {
     size_t position = value.find(phrase);
     return position;
+}
+
+void English_Word::add_incorrect() {
+//    cout << "tried_times before: " << tried_times <<   endl;
+    ++tried_times;
+//    cout << "tried_times after: " << tried_times <<   endl;
+}
+
+ostream &operator<<(ostream &output, English_Word &D ) {
+    string spaces = "";
+    for(int i = 0 ; i < 20-D.get_length() ; ++i) spaces += ' ';
+
+    string time = "";
+    if(D.tried_times > 1) time = "times";
+    else time = "time";
+
+    output << D.value << spaces << "\t| incorrect " << D.tried_times << " " << time;
+    return output;
 }

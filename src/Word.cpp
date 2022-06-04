@@ -12,19 +12,19 @@ Word::Word(){
 
 Word::Word(string a)
 {
-    cout << "\n\n";
-
     value = a;
     length = a.length();
 
-    info();
+//    info();
 }
 
 void Word::info()
 {
+    cout << endl;
+    cout << "============ DEBUG ============" << endl;
     cout << "value = " << value << " \n";
     cout << "length = " << length << " \n";
-//    cout << "-------------------------- \n";
+//    cout << "===============================" << endl;
 }
 
 string Word::get_value() {

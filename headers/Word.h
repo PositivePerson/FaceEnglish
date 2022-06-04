@@ -8,15 +8,16 @@
 #include <string>
 
 class Word {
+    //    std::string value;
+protected:
     int hints = 0;
     unsigned int length;
-//    std::string value;
 public:
     std::string value = "abc";
 
     Word();
     Word(std::string a);
-    void info();
+    virtual void info();
     std::string get_value();
     int get_hints_num();
     int get_length();
