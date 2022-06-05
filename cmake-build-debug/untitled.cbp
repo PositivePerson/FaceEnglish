@@ -98,9 +98,6 @@
 		<Unit filename="C:/Users/My/Desktop/untitled/headers/Polish_Word.h">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="C:/Users/My/Desktop/untitled/headers/Produkt.h">
-			<Option target="untitled"/>
-		</Unit>
 		<Unit filename="C:/Users/My/Desktop/untitled/headers/Word.h">
 			<Option target="untitled"/>
 		</Unit>
@@ -120,9 +117,6 @@
 			<Option target="untitled"/>
 		</Unit>
 		<Unit filename="C:/Users/My/Desktop/untitled/src/Polish_Word.cpp">
-			<Option target="untitled"/>
-		</Unit>
-		<Unit filename="C:/Users/My/Desktop/untitled/src/Produkt.cpp">
 			<Option target="untitled"/>
 		</Unit>
 		<Unit filename="C:/Users/My/Desktop/untitled/src/Word.cpp">

@@ -8,13 +8,11 @@
 #include <string>
 
 class Word {
-    //    std::string value;
 protected:
     int hints = 0;
     unsigned int length;
+    std::string value;
 public:
-    std::string value = "abc";
-
     Word();
     Word(std::string a);
     virtual void info();

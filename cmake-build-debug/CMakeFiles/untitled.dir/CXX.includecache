@@ -6,11 +6,41 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/My/Desktop/untitled/headers/Chapter.h
+string
+-
+vector
+-
+English_Word.h
+C:/Users/My/Desktop/untitled/headers/English_Word.h
+Polish_Word.h
+C:/Users/My/Desktop/untitled/headers/Polish_Word.h
+Counter.h
+C:/Users/My/Desktop/untitled/headers/Counter.h
+
+C:/Users/My/Desktop/untitled/headers/Console.h
+string
+-
+Chapter.h
+C:/Users/My/Desktop/untitled/headers/Chapter.h
+Hints.h
+C:/Users/My/Desktop/untitled/headers/Hints.h
+Counter.h
+C:/Users/My/Desktop/untitled/headers/Counter.h
+
+C:/Users/My/Desktop/untitled/headers/Counter.h
+
 C:/Users/My/Desktop/untitled/headers/English_Word.h
 vector
 -
 Word.h
 C:/Users/My/Desktop/untitled/headers/Word.h
+
+C:/Users/My/Desktop/untitled/headers/Hints.h
+vector
+-
+English_Word.h
+C:/Users/My/Desktop/untitled/headers/English_Word.h
 
 C:/Users/My/Desktop/untitled/headers/Polish_Word.h
 English_Word.h
@@ -22,12 +52,28 @@ C:/Users/My/Desktop/untitled/headers/Word.h
 string
 -
 
-C:/Users/My/Desktop/untitled/src/English_Word.cpp
+C:/Users/My/Desktop/untitled/src/Chapter.cpp
+../headers/Chapter.h
+C:/Users/My/Desktop/untitled/headers/Chapter.h
+../headers/Polish_Word.h
+C:/Users/My/Desktop/untitled/headers/Polish_Word.h
 ../headers/English_Word.h
 C:/Users/My/Desktop/untitled/headers/English_Word.h
 iostream
 -
-vector
+fstream
+-
+
+C:/Users/My/Desktop/untitled/src/Console.cpp
+../headers/Console.h
+C:/Users/My/Desktop/untitled/headers/Console.h
+iostream
+-
+windows.h
+C:/Users/My/Desktop/untitled/src/windows.h
+conio.h
+-
+algorithm
 -
 
 C:/Users/My/Desktop/untitled/src/Polish_Word.cpp
@@ -35,4 +81,14 @@ C:/Users/My/Desktop/untitled/src/Polish_Word.cpp
 C:/Users/My/Desktop/untitled/headers/Polish_Word.h
 iostream
 -
+
+C:/Users/My/Desktop/untitled/src/main.cpp
+iostream
+-
+../headers/Console.h
+C:/Users/My/Desktop/untitled/headers/Console.h
+../headers/Word.h
+C:/Users/My/Desktop/untitled/headers/Word.h
+../headers/Chapter.h
+C:/Users/My/Desktop/untitled/headers/Chapter.h
 

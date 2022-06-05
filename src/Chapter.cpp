@@ -57,7 +57,7 @@ void Chapter::fetch_lines(string pl_name, string eng_name) {
 }
 
 void Chapter::set_word_to_study(Polish_Word *word) {
-    cout << "Copied obj destination: " << &((*word).get_translations()[0]) << endl;
+//    cout << "Copied obj destination: " << &((*word).get_translations()[0]) << endl;
     to_study.push_back(*word);
 }
 
@@ -68,7 +68,8 @@ void Chapter::reset_to_study() {
 void Chapter::filter_to_incorrect() {
     pl_word.clear();
     for(auto word : to_study) {
-        word.reset_translations_counters();
+//        word.reset_translations_counters();
+        word.reset_counters();
 
         const Polish_Word temp = word;
         pl_word.push_back(temp);
@@ -91,10 +92,6 @@ vector<Polish_Word> Chapter::get_pl_words() {
 vector<Polish_Word> Chapter::get_words_to_study() {
     return to_study;
 };
-
-//Polish_Word operator+(Polish_Word const &a, Polish_Word const &b) {
-//    return Polish_Word(a);
-//};
 
 Chapter::~Chapter() {
 //    delete counter;

@@ -5,7 +5,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/untitled.dir/src/English_Word.cpp.obj"
   "CMakeFiles/untitled.dir/src/Hints.cpp.obj"
   "CMakeFiles/untitled.dir/src/Polish_Word.cpp.obj"
-  "CMakeFiles/untitled.dir/src/Produkt.cpp.obj"
   "CMakeFiles/untitled.dir/src/Word.cpp.obj"
   "CMakeFiles/untitled.dir/src/main.cpp.obj"
   "libuntitled.dll.a"

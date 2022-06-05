@@ -78,22 +78,9 @@ CMakeFiles/untitled.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled.dir/src/main.cpp.s"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\My\Desktop\untitled\src\main.cpp -o CMakeFiles\untitled.dir\src\main.cpp.s
 
-CMakeFiles/untitled.dir/src/Produkt.cpp.obj: CMakeFiles/untitled.dir/flags.make
-CMakeFiles/untitled.dir/src/Produkt.cpp.obj: ../src/Produkt.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\My\Desktop\untitled\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/untitled.dir/src/Produkt.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\untitled.dir\src\Produkt.cpp.obj -c C:\Users\My\Desktop\untitled\src\Produkt.cpp
-
-CMakeFiles/untitled.dir/src/Produkt.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled.dir/src/Produkt.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\My\Desktop\untitled\src\Produkt.cpp > CMakeFiles\untitled.dir\src\Produkt.cpp.i
-
-CMakeFiles/untitled.dir/src/Produkt.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled.dir/src/Produkt.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\My\Desktop\untitled\src\Produkt.cpp -o CMakeFiles\untitled.dir\src\Produkt.cpp.s
-
 CMakeFiles/untitled.dir/src/Console.cpp.obj: CMakeFiles/untitled.dir/flags.make
 CMakeFiles/untitled.dir/src/Console.cpp.obj: ../src/Console.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\My\Desktop\untitled\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/untitled.dir/src/Console.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\My\Desktop\untitled\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/untitled.dir/src/Console.cpp.obj"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\untitled.dir\src\Console.cpp.obj -c C:\Users\My\Desktop\untitled\src\Console.cpp
 
 CMakeFiles/untitled.dir/src/Console.cpp.i: cmake_force
@@ -106,7 +93,7 @@ CMakeFiles/untitled.dir/src/Console.cpp.s: cmake_force
 
 CMakeFiles/untitled.dir/src/Word.cpp.obj: CMakeFiles/untitled.dir/flags.make
 CMakeFiles/untitled.dir/src/Word.cpp.obj: ../src/Word.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\My\Desktop\untitled\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/untitled.dir/src/Word.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\My\Desktop\untitled\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/untitled.dir/src/Word.cpp.obj"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\untitled.dir\src\Word.cpp.obj -c C:\Users\My\Desktop\untitled\src\Word.cpp
 
 CMakeFiles/untitled.dir/src/Word.cpp.i: cmake_force
@@ -119,7 +106,7 @@ CMakeFiles/untitled.dir/src/Word.cpp.s: cmake_force
 
 CMakeFiles/untitled.dir/src/Chapter.cpp.obj: CMakeFiles/untitled.dir/flags.make
 CMakeFiles/untitled.dir/src/Chapter.cpp.obj: ../src/Chapter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\My\Desktop\untitled\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/untitled.dir/src/Chapter.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\My\Desktop\untitled\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/untitled.dir/src/Chapter.cpp.obj"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\untitled.dir\src\Chapter.cpp.obj -c C:\Users\My\Desktop\untitled\src\Chapter.cpp
 
 CMakeFiles/untitled.dir/src/Chapter.cpp.i: cmake_force
@@ -132,7 +119,7 @@ CMakeFiles/untitled.dir/src/Chapter.cpp.s: cmake_force
 
 CMakeFiles/untitled.dir/src/Polish_Word.cpp.obj: CMakeFiles/untitled.dir/flags.make
 CMakeFiles/untitled.dir/src/Polish_Word.cpp.obj: ../src/Polish_Word.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\My\Desktop\untitled\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/untitled.dir/src/Polish_Word.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\My\Desktop\untitled\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/untitled.dir/src/Polish_Word.cpp.obj"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\untitled.dir\src\Polish_Word.cpp.obj -c C:\Users\My\Desktop\untitled\src\Polish_Word.cpp
 
 CMakeFiles/untitled.dir/src/Polish_Word.cpp.i: cmake_force
@@ -145,7 +132,7 @@ CMakeFiles/untitled.dir/src/Polish_Word.cpp.s: cmake_force
 
 CMakeFiles/untitled.dir/src/English_Word.cpp.obj: CMakeFiles/untitled.dir/flags.make
 CMakeFiles/untitled.dir/src/English_Word.cpp.obj: ../src/English_Word.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\My\Desktop\untitled\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/untitled.dir/src/English_Word.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\My\Desktop\untitled\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/untitled.dir/src/English_Word.cpp.obj"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\untitled.dir\src\English_Word.cpp.obj -c C:\Users\My\Desktop\untitled\src\English_Word.cpp
 
 CMakeFiles/untitled.dir/src/English_Word.cpp.i: cmake_force
@@ -158,7 +145,7 @@ CMakeFiles/untitled.dir/src/English_Word.cpp.s: cmake_force
 
 CMakeFiles/untitled.dir/src/Hints.cpp.obj: CMakeFiles/untitled.dir/flags.make
 CMakeFiles/untitled.dir/src/Hints.cpp.obj: ../src/Hints.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\My\Desktop\untitled\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/untitled.dir/src/Hints.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\My\Desktop\untitled\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/untitled.dir/src/Hints.cpp.obj"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\untitled.dir\src\Hints.cpp.obj -c C:\Users\My\Desktop\untitled\src\Hints.cpp
 
 CMakeFiles/untitled.dir/src/Hints.cpp.i: cmake_force
@@ -171,7 +158,7 @@ CMakeFiles/untitled.dir/src/Hints.cpp.s: cmake_force
 
 CMakeFiles/untitled.dir/src/Counter.cpp.obj: CMakeFiles/untitled.dir/flags.make
 CMakeFiles/untitled.dir/src/Counter.cpp.obj: ../src/Counter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\My\Desktop\untitled\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/untitled.dir/src/Counter.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\My\Desktop\untitled\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/untitled.dir/src/Counter.cpp.obj"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\untitled.dir\src\Counter.cpp.obj -c C:\Users\My\Desktop\untitled\src\Counter.cpp
 
 CMakeFiles/untitled.dir/src/Counter.cpp.i: cmake_force
@@ -185,7 +172,6 @@ CMakeFiles/untitled.dir/src/Counter.cpp.s: cmake_force
 # Object files for target untitled
 untitled_OBJECTS = \
 "CMakeFiles/untitled.dir/src/main.cpp.obj" \
-"CMakeFiles/untitled.dir/src/Produkt.cpp.obj" \
 "CMakeFiles/untitled.dir/src/Console.cpp.obj" \
 "CMakeFiles/untitled.dir/src/Word.cpp.obj" \
 "CMakeFiles/untitled.dir/src/Chapter.cpp.obj" \
@@ -198,7 +184,6 @@ untitled_OBJECTS = \
 untitled_EXTERNAL_OBJECTS =
 
 untitled.exe: CMakeFiles/untitled.dir/src/main.cpp.obj
-untitled.exe: CMakeFiles/untitled.dir/src/Produkt.cpp.obj
 untitled.exe: CMakeFiles/untitled.dir/src/Console.cpp.obj
 untitled.exe: CMakeFiles/untitled.dir/src/Word.cpp.obj
 untitled.exe: CMakeFiles/untitled.dir/src/Chapter.cpp.obj
@@ -210,7 +195,7 @@ untitled.exe: CMakeFiles/untitled.dir/build.make
 untitled.exe: CMakeFiles/untitled.dir/linklibs.rsp
 untitled.exe: CMakeFiles/untitled.dir/objects1.rsp
 untitled.exe: CMakeFiles/untitled.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\My\Desktop\untitled\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable untitled.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\My\Desktop\untitled\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable untitled.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\untitled.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

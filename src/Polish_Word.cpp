@@ -36,8 +36,6 @@ Polish_Word::Polish_Word(string argValue, English_Word eng_line) {
             cout << "translations = " << i.get_value() << endl;
         }
 
-        eng_equals = translations.size();
-
         info();
 }
 
@@ -47,11 +45,6 @@ void Polish_Word::info() {
     cout << "translations num: " << translations.size() << endl;
 }
 
-
-void Polish_Word::setTaught(bool val) {
-    taught = val;
-}
-
 int Polish_Word::get_incorrect_num() {
     return incorrect_ans;
 }
@@ -59,10 +52,6 @@ int Polish_Word::get_incorrect_num() {
 void Polish_Word::count_incorrect() {
     incorrect_ans++;
 }
-
-//void Polish_Word::set_fault() {
-//    if(faultless) faultless = false;
-//}
 
 std::vector<English_Word> Polish_Word::get_translations() {
     return translations;
@@ -84,6 +73,11 @@ void Polish_Word::operator=(const Polish_Word &WRD) {
     value = WRD.value;
     translations = WRD.translations;
     incorrect_ans = WRD.incorrect_ans;
+}
+
+void Polish_Word::reset_counters() {
+    incorrect_ans = 0;
+    reset_translations_counters();
 }
 
 void Polish_Word::reset_translations_counters() {

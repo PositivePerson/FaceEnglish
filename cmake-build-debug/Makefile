@@ -272,30 +272,6 @@ src/Polish_Word.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Polish_Word.cpp.s
 .PHONY : src/Polish_Word.cpp.s
 
-src/Produkt.obj: src/Produkt.cpp.obj
-.PHONY : src/Produkt.obj
-
-# target to build an object file
-src/Produkt.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Produkt.cpp.obj
-.PHONY : src/Produkt.cpp.obj
-
-src/Produkt.i: src/Produkt.cpp.i
-.PHONY : src/Produkt.i
-
-# target to preprocess a source file
-src/Produkt.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Produkt.cpp.i
-.PHONY : src/Produkt.cpp.i
-
-src/Produkt.s: src/Produkt.cpp.s
-.PHONY : src/Produkt.s
-
-# target to generate assembly for a file
-src/Produkt.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Produkt.cpp.s
-.PHONY : src/Produkt.cpp.s
-
 src/Word.obj: src/Word.cpp.obj
 .PHONY : src/Word.obj
 
@@ -371,9 +347,6 @@ help:
 	@echo ... src/Polish_Word.obj
 	@echo ... src/Polish_Word.i
 	@echo ... src/Polish_Word.s
-	@echo ... src/Produkt.obj
-	@echo ... src/Produkt.i
-	@echo ... src/Produkt.s
 	@echo ... src/Word.obj
 	@echo ... src/Word.i
 	@echo ... src/Word.s

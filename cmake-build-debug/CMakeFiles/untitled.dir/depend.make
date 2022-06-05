@@ -34,8 +34,6 @@ CMakeFiles/untitled.dir/src/Polish_Word.cpp.obj: \
  ../headers/Polish_Word.h \
  ../headers/Word.h \
  ../src/Polish_Word.cpp
-CMakeFiles/untitled.dir/src/Produkt.cpp.obj: \
- ../src/Produkt.cpp
 CMakeFiles/untitled.dir/src/Word.cpp.obj: \
  ../headers/Word.h \
  ../src/Word.cpp

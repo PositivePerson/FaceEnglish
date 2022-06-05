@@ -7,7 +7,7 @@
 using namespace std;
 
 Word::Word(){
-    cout << "\n - First constructor (Word without argument) \n";
+//    cout << "\n - First constructor (Word without argument) \n";
 }
 
 Word::Word(string a)
@@ -21,9 +21,8 @@ Word::Word(string a)
 void Word::info()
 {
     cout << endl;
-    cout << "============ DEBUG ============" << endl;
+    cout << "============ DEBUG (dev mode)  ============" << endl;
     cout << "value = " << value << " \n";
-    cout << "length = " << length << " \n";
 //    cout << "===============================" << endl;
 }
 

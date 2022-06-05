@@ -9,7 +9,7 @@
 using namespace std;
 
 Hints::Hints() {
-    cout << "Hints constr" << endl;
+//    cout << "Hints constr" << endl;
 }
 
 string Hints::first_hint(English_Word word) {

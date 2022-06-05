@@ -5,9 +5,7 @@
 #include "../headers/Console.h"
 #include <iostream>
 #include "windows.h"
-#include <stdio.h>
 #include <conio.h>
-#include <cstdlib>
 #include <algorithm>
 using namespace std;
 
@@ -139,7 +137,6 @@ void Console::play() {
             } else if(correct) {
                 cout << "That's right!" << endl;
 
-//                current_chapter->counter.add_correct();
                 Sleep(500);
             }
         } while (!correct);
@@ -148,11 +145,10 @@ void Console::play() {
             current_chapter->counter.add_correct();
         }
         else {
-            cout << "Original obj destination: " << &(word.get_translations()[0]) << endl;
+//            cout << "Original obj destination: " << &(word.get_translations()[0]) << endl;
             current_chapter->set_word_to_study(&word);
 
             if(hint_option != 3) {
-
                 current_chapter->counter.add_incorrect();
             }
         }
@@ -172,7 +168,7 @@ const string Console::get_user_answer() {
     else if(answer == "end") {
         cout << "Typed in \"end\" \n";
 
-//          clearConsole();
+          clearConsole();
             end_screen();
             system("PAUSE");
             _Exit(0);
@@ -222,9 +218,15 @@ void Console::end_screen(){
 //        cout << temp;
 //        cout << endl;
 
-//    cout << "Word";
-        for(auto eng_word : word.get_translations()) {
-            cout << eng_word << endl;
+        if(word.get_translations().size() == 1) cout << word.get_translations()[0] << endl;
+        else {
+            English_Word temp = word.get_translations()[0];
+
+            for(auto it = word.get_translations().begin() +1 ; it != word.get_translations().end() ; ++it) {
+                temp = temp + (*it);
+            }
+
+            cout << temp << endl;
         }
     }
 
@@ -263,7 +265,6 @@ char Console::get_char_input() {
 
     do{
         choice=_getche();
-//        cout << endl << "Choice = " << choice << endl;
     }while(choice<'1' || choice>'3');
     cout << endl;
 

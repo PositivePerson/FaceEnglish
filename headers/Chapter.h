@@ -43,8 +43,6 @@ public:
     void filter_to_incorrect();
     void set_word_to_study(Polish_Word *word);
     void reset_to_study();
-
-//    friend Polish_Word operator+(Polish_Word const &a, Polish_Word const &b);
 };
 
 

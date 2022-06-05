@@ -12,13 +12,13 @@
 class English_Word: public Word {
     int tried_times = 0;
 public:
-//    English_Word();
     using Word::Word;
-    int reset();
+    void reset();
     std::string substr(int start, int end);
     void erase(int start, int end);
     size_t find(std::string phrase);
     friend std::ostream& operator<<(std::ostream &os, English_Word &D);
+    friend English_Word operator+ (English_Word B, English_Word &D);
 
     void add_incorrect();
 };

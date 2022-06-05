@@ -8,8 +8,8 @@
 
 using namespace std;
 
-int English_Word::reset() {
-    return tried_times = 0;
+void English_Word::reset() {
+    tried_times = 0;
 }
 
 std::string English_Word::substr(int start, int end) {
@@ -42,4 +42,9 @@ ostream &operator<<(ostream &output, English_Word &D ) {
 
     output << D.value << spaces << "\t| incorrect " << D.tried_times << " " << time;
     return output;
+}
+
+English_Word operator+(English_Word B, English_Word &D) {
+    B.set_value(B.get_value() + ", " + D.get_value());
+    return B;
 }
