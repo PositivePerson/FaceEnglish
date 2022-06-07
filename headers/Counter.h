@@ -7,17 +7,17 @@
 
 
 class Counter {
-    int correct = 0;
-    int incorrect = 0;
-    int skipped = 0;
+    int mCorrect = 0;
+    int mIncorrect = 0;
+    int mSkipped = 0;
 public:
-    void add_correct();
-    void add_incorrect();
-    void add_skipped();
+    void addCorrect();
+    void addIncorrect();
+    void addSkipped();
 
-    int get_correct_num();
-    int get_incorrect_num();
-    int get_skipped_num();
+    int getCorrectNum();
+    int getIncorrectNum();
+    int getSkippedNum();
 
     void reset();
 

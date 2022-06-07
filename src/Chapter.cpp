@@ -12,85 +12,85 @@
 
 using namespace std;
 
-Chapter::Chapter(string pl_name, string eng_name)
+Chapter::Chapter(string aPlName, string aEngName)
 {
     cout << "- First constructor (Chapter) \n";
 
-//    pl_file_name = pl_name;
-//    eng_file_name = eng_name;
+//    pl_file_name = aPlName;
+//    eng_file_name = aEngName;
 
 //    counter = new Counter();
 
-    fetch_lines(pl_name, eng_name);
+    fetchLines(aPlName, aEngName);
     info();
 };
 
 void Chapter::info()
 {
     cout << "========================= \n";
-    cout << "lines_amount = " << lines_amount << " \n";
-    cout << "correct = " << counter.get_correct_num() << " \n";
-    cout << "incorrect = " << counter.get_incorrect_num() << " \n";
+    cout << "linesAmount = " << linesAmount << " \n";
+    cout << "mCorrect = " << counter.getCorrectNum() << " \n";
+    cout << "mIncorrect = " << counter.getIncorrectNum() << " \n";
     cout << "========================= \n";
 }
 
-void Chapter::fetch_lines(string pl_name, string eng_name) {
+void Chapter::fetchLines(string aPlName, string aEngName) {
     string temp_pl_imp;
     string temp_eng_imp;
 
-//    ifstream UrLanguage(pl_name + ".txt");
-//    ifstream EnglishWords(eng_name + ".txt");
+//    ifstream UrLanguage(aPlName + ".txt");
+//    ifstream EnglishWords(aEngName + ".txt");
 
-    ifstream UrLanguage(pl_name);
-    ifstream EnglishWords(eng_name);
+    ifstream UrLanguage(aPlName);
+    ifstream EnglishWords(aEngName);
 
     while(getline(UrLanguage,temp_pl_imp) && getline(EnglishWords,temp_eng_imp)){
         English_Word temp_eng_obj(temp_eng_imp);
         Polish_Word temp_pl_obj(temp_pl_imp, temp_eng_obj);
 
-        pl_word.push_back(temp_pl_obj);
-        eng_words.push_back(temp_eng_obj);
+        plWord.push_back(temp_pl_obj);
+        engWords.push_back(temp_eng_obj);
 
-        lines_amount++;
+        linesAmount++;
 //        divide_words(temp_eng);
     }
 }
 
-void Chapter::set_word_to_study(Polish_Word *word) {
-//    cout << "Copied obj destination: " << &((*word).get_translations()[0]) << endl;
-    to_study.push_back(*word);
+void Chapter::setWordToStudy(Polish_Word *aWord) {
+//    cout << "Copied obj destination: " << &((*aWord).get_translations()[0]) << endl;
+    toStudy.push_back(*aWord);
 }
 
-void Chapter::reset_to_study() {
-    to_study.clear();
+void Chapter::resetToStudy() {
+    toStudy.clear();
 }
 
-void Chapter::filter_to_incorrect() {
-    pl_word.clear();
-    for(auto word : to_study) {
+void Chapter::filterToIncorrect() {
+    plWord.clear();
+    for(auto word : toStudy) {
 //        word.reset_translations_counters();
         word.reset_counters();
 
         const Polish_Word temp = word;
-        pl_word.push_back(temp);
+        plWord.push_back(temp);
     }
 
 // It works, but lets use OPERATOR= overload
-//    pl_word = to_study;
+//    plWord = toStudy;
 
-    reset_to_study();
+    resetToStudy();
 }
 
-int Chapter::get_lines_amount() {
-    return lines_amount;
+int Chapter::getLinesAmount() {
+    return linesAmount;
 }
 
-vector<Polish_Word> Chapter::get_pl_words() {
-    return pl_word;
+vector<Polish_Word> Chapter::getPlWords() {
+    return plWord;
 };
 
-vector<Polish_Word> Chapter::get_words_to_study() {
-    return to_study;
+vector<Polish_Word> Chapter::getWordsToStudy() {
+    return toStudy;
 };
 
 Chapter::~Chapter() {

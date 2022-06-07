@@ -4,32 +4,32 @@
 
 #include "../headers/Counter.h"
 
-void Counter::add_correct() {
-    correct++;
+void Counter::addCorrect() {
+    mCorrect++;
 }
 
-void Counter::add_incorrect() {
-    incorrect++;
+void Counter::addIncorrect() {
+    mIncorrect++;
 }
 
-void Counter::add_skipped() {
-    skipped++;
+void Counter::addSkipped() {
+    mSkipped++;
 }
 
-int Counter::get_correct_num() {
-    return correct;
+int Counter::getCorrectNum() {
+    return mCorrect;
 }
 
-int Counter::get_incorrect_num() {
-    return incorrect;
+int Counter::getIncorrectNum() {
+    return mIncorrect;
 }
 
-int Counter::get_skipped_num() {
-    return skipped;
+int Counter::getSkippedNum() {
+    return mSkipped;
 }
 
 void Counter::reset() {
-    incorrect = 0;
-    correct = 0;
-    skipped = 0;
+    mIncorrect = 0;
+    mCorrect = 0;
+    mSkipped = 0;
 }

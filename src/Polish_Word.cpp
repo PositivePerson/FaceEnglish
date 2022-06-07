@@ -7,33 +7,33 @@
 
 using namespace std;
 
-Polish_Word::Polish_Word(string argValue, English_Word eng_line) {
-        set_value(argValue);
+Polish_Word::Polish_Word(string aArgValue, English_Word aEng_line) {
+        set_value(aArgValue);
 
         size_t position = 51;
 
-        position = eng_line.find("OR");
+        position = aEng_line.find("OR");
         do{
-            position = eng_line.find("OR");
+            position = aEng_line.find("OR");
 //            cout << "--------position: " << position << endl;
 
             if(position<50){
-                const string temp = eng_line.substr(0, position-1);
-//                cout << "--------eng_line after substr(): " << temp << endl;
-                translations.push_back(temp);
-                eng_line.erase(0, position+3);
+                const string temp = aEng_line.substr(0, position - 1);
+//                cout << "--------aEng_line after substr(): " << temp << endl;
+                mTranslations.push_back(temp);
+                aEng_line.erase(0, position + 3);
 
-//                cout << "--------eng_line after erase(): " << eng_line.get_value() << endl;
+//                cout << "--------aEng_line after erase(): " << aEng_line.get_value() << endl;
             }
             else{
-//                cout << "--------pushing to vector: " << eng_line.get_value() << endl;
-                translations.push_back(eng_line.get_value());
+//                cout << "--------pushing to vector: " << aEng_line.get_value() << endl;
+                mTranslations.push_back(aEng_line.get_value());
             }
 
         }while(position<50);
 
-        for(English_Word i : translations){
-            cout << "translations = " << i.get_value() << endl;
+        for(English_Word i : mTranslations){
+            cout << "mTranslations = " << i.get_value() << endl;
         }
 
         info();
@@ -42,44 +42,44 @@ Polish_Word::Polish_Word(string argValue, English_Word eng_line) {
 void Polish_Word::info() {
     Word::info();
 
-    cout << "translations num: " << translations.size() << endl;
+    cout << "mTranslations num: " << mTranslations.size() << endl;
 }
 
 int Polish_Word::get_incorrect_num() {
-    return incorrect_ans;
+    return mIncorrect_ans;
 }
 
 void Polish_Word::count_incorrect() {
-    incorrect_ans++;
+    mIncorrect_ans++;
 }
 
 std::vector<English_Word> Polish_Word::get_translations() {
-    return translations;
+    return mTranslations;
 }
 
 void Polish_Word::add_incorrect_eng() {
-//    cout << "translations[0] adress: " << &(translations[0]) << endl;
+//    cout << "mTranslations[0] adress: " << &(mTranslations[0]) << endl;
 
-    for(auto it = translations.begin() ; it != translations.end() ; ++it) {
-//    for(auto word : translations) {
-//        cout << "translations[i] adress (in loop): " << &(it) << "  |  " << &(*it) << endl;
-        (*it).add_incorrect();
+    for(auto it = mTranslations.begin() ; it != mTranslations.end() ; ++it) {
+//    for(auto word : mTranslations) {
+//        cout << "mTranslations[i] adress (in loop): " << &(it) << "  |  " << &(*it) << endl;
+        (*it).addIncorrect();
     }
 }
 
-void Polish_Word::operator=(const Polish_Word &WRD) {
-    hints = WRD.hints;
-    length = WRD.length;
-    value = WRD.value;
-    translations = WRD.translations;
-    incorrect_ans = WRD.incorrect_ans;
+void Polish_Word::operator=(const Polish_Word &aD) {
+    mHints = aD.mHints;
+    mLength = aD.mLength;
+    mValue = aD.mValue;
+    mTranslations = aD.mTranslations;
+    mIncorrect_ans = aD.mIncorrect_ans;
 }
 
 void Polish_Word::reset_counters() {
-    incorrect_ans = 0;
+    mIncorrect_ans = 0;
     reset_translations_counters();
 }
 
 void Polish_Word::reset_translations_counters() {
-    for(auto it = translations.begin() ; it != translations.end() ; ++it) (*it).reset();
+    for(auto it = mTranslations.begin() ; it != mTranslations.end() ; ++it) (*it).reset();
 }

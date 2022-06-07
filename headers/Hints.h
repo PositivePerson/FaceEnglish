@@ -13,19 +13,12 @@ class Hints {
 public:
     Hints();
 
-//    Hints(std::string argValue, English_Word eng_line);
-
-    std::string first_hint(English_Word word);
-
-    void handleHint(int incorrect, int hints, int hint_option, std::vector<English_Word> translations);
-
-    int ask_if_hint_needed(int count_incorrect, int hints);
-
-    void smooth_cout(std::string text);
-
-    bool get_bool_input();
-
-    std::string second_hint(English_Word word);
+    std::string firstHint(English_Word aWord);
+    void handleHint(int aIncorrect, int aHints, int aHint_option, std::vector<English_Word> aTranslations);
+    int askIfHintNeeded(int aCount_incorrect, int aHints);
+    void smoothCout(std::string aText);
+    bool getBoolInput();
+    std::string second_hint(English_Word aWord);
 };
 
 #endif //UNTITLED_HINTS_H

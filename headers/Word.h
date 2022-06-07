@@ -9,9 +9,9 @@
 
 class Word {
 protected:
-    int hints = 0;
-    unsigned int length;
-    std::string value;
+    int mHints = 0;
+    unsigned int mLength;
+    std::string mValue;
 public:
     Word();
     Word(std::string a);
@@ -20,7 +20,7 @@ public:
     int get_hints_num();
     int get_length();
     void count_hints();
-    void set_value(std::string argValue);
+    void set_value(std::string aArgValue);
 };
 
 #endif //UNTITLED_WORD_H

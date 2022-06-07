@@ -13,25 +13,25 @@
 #include "Counter.h"
 
 class Chapter {
-    std::vector<Polish_Word> to_study;
-    std::vector<Polish_Word> pl_word;
-    std::vector<English_Word> eng_words;
+    std::vector<Polish_Word> toStudy;
+    std::vector<Polish_Word> plWord;
+    std::vector<English_Word> engWords;
 
-    int lines_amount = 0;
+    int linesAmount = 0;
 public:
     Counter counter;
 
-    Chapter(std::string pl_name, std::string eng_name);
+    Chapter(std::string aPlName, std::string aEngName);
     ~Chapter();
 
     void info();
-    void fetch_lines(std::string pl_name, std::string eng_name);
-    int get_lines_amount();
-    void filter_to_incorrect();
-    void set_word_to_study(Polish_Word *word);
-    void reset_to_study();
-    std::vector<Polish_Word> get_pl_words();
-    std::vector<Polish_Word> get_words_to_study();
+    void fetchLines(std::string aPlName, std::string aEngName);
+    int getLinesAmount();
+    void filterToIncorrect();
+    void setWordToStudy(Polish_Word *aWord);
+    void resetToStudy();
+    std::vector<Polish_Word> getPlWords();
+    std::vector<Polish_Word> getWordsToStudy();
 };
 
 

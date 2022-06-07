@@ -9,41 +9,41 @@
 using namespace std;
 
 void English_Word::reset() {
-    tried_times = 0;
+    mTriedTimes = 0;
 }
 
-std::string English_Word::substr(int start, int end) {
-    return value.substr(start, end);
+std::string English_Word::substr(int aStart, int aEnd) {
+    return mValue.substr(aStart, aEnd);
 }
 
-void English_Word::erase(int start, int end) {
-    value.erase(start, end);
+void English_Word::erase(int aStart, int aEnd) {
+    mValue.erase(aStart, aEnd);
 }
 
-size_t English_Word::find(string phrase) {
-    size_t position = value.find(phrase);
+size_t English_Word::find(string aPhrase) {
+    size_t position = mValue.find(aPhrase);
     return position;
 }
 
-void English_Word::add_incorrect() {
-//    cout << "tried_times before: " << tried_times <<   endl;
-    ++tried_times;
-//    cout << "tried_times after: " << tried_times <<   endl;
+void English_Word::addIncorrect() {
+//    cout << "mTriedTimes before: " << mTriedTimes <<   endl;
+    ++mTriedTimes;
+//    cout << "mTriedTimes after: " << mTriedTimes <<   endl;
 }
 
-ostream &operator<<(ostream &output, English_Word &D ) {
+ostream &operator<<(ostream &aOs, English_Word &aD ) {
     string spaces = "";
-    for(int i = 0 ; i < 20-D.get_length() ; ++i) spaces += ' ';
+    for(int i = 0 ; i < 20 - aD.get_length() ; ++i) spaces += ' ';
 
     string time = "";
-    if(D.tried_times > 1) time = "times";
+    if(aD.mTriedTimes > 1) time = "times";
     else time = "time";
 
-    output << D.value << spaces << "\t| incorrect " << D.tried_times << " " << time;
-    return output;
+    aOs << aD.mValue << spaces << "\t| mIncorrect " << aD.mTriedTimes << " " << time;
+    return aOs;
 }
 
-English_Word operator+(English_Word B, English_Word &D) {
-    B.set_value(B.get_value() + ", " + D.get_value());
-    return B;
+English_Word operator+(English_Word aB, English_Word &aD) {
+    aB.set_value(aB.get_value() + ", " + aD.get_value());
+    return aB;
 }

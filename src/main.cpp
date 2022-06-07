@@ -9,7 +9,7 @@ using namespace std;
 int main() {
     Console myConsole;
     myConsole.welcome();
-    myConsole.choose_chapter();
+    myConsole.chooseChapter();
 //    myConsole.ask_id_hint_needed(2, 3);
 
 //    Word word1("Avocado");

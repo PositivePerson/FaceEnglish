@@ -14,12 +14,12 @@ Console::Console()
 //    cout << "- First constructor (Console) - \n";
 }
 
-void Console::smooth_cout(std::string text)
+void Console::smoothCout(std::string aText)
 {
     const int time = 20;
-    for(int i=0; i<text.size(); i++)
+    for(int i=0; i < aText.size(); i++)
     {
-        cout<<text[i];
+        cout << aText[i];
         Sleep(time);
     }
 }
@@ -27,7 +27,7 @@ void Console::smooth_cout(std::string text)
 void Console::welcome() {
     cout<<'\n';
     const string text="Choose subject:";
-    smooth_cout("Choose subject:");
+    smoothCout("Choose subject:");
     cout<<"\n\n";
     cout<<"   1 - Family"<<'\n';
     cout<<"   2 - Home"<<'\n';
@@ -42,14 +42,14 @@ void Console::welcome() {
     cout<<"		Exit: 'exit'\n	";
 }
 
-void Console::choose_chapter() {
+void Console::chooseChapter() {
     int whichSubject=0;
     string eng_file;
     string pl_file;
 
     do{
 //        cin>>whichSubject;
-        whichSubject=get_char_input() -48;
+        whichSubject= getCharInput() - 48;
 
         switch(whichSubject){
             case 1:
@@ -98,14 +98,14 @@ void Console::choose_chapter() {
         }
     }while(whichSubject<1 || whichSubject>7);
 
-    current_chapter = new Chapter(pl_file, eng_file);
-    hint = new Hints();
+    mCurrentChapter = new Chapter(pl_file, eng_file);
+    mHint = new Hints();
 
     play();
 }
 
 void Console::play() {
-    for(auto word : current_chapter->get_pl_words()){
+    for(auto word : mCurrentChapter->getPlWords()){
         clearConsole();
 
         cout << word.get_value() << " to po angielsku: " << endl ;
@@ -114,8 +114,8 @@ void Console::play() {
 
         int hint_option;
         do{
-            user_ans = get_user_answer();
-            correct = check_if_answer_match(word.get_translations(), user_ans);
+            user_ans = getUserAnswer();
+            correct = checkIfAnswerMatch(word.get_translations(), user_ans);
 
             if(!correct) {
                 word.add_incorrect_eng();
@@ -125,15 +125,15 @@ void Console::play() {
                 word.count_incorrect();
             }
             else if(!correct) {
-                hint_option = hint->ask_if_hint_needed(word.get_incorrect_num(), word.get_hints_num());
+                hint_option = mHint->askIfHintNeeded(word.get_incorrect_num(), word.get_hints_num());
 
                 if(hint_option == 3) {
-                    current_chapter->counter.add_skipped();
+                    mCurrentChapter->counter.addSkipped();
                     break;
                 }
 
                 else if(hint_option > 0) {
-                    hint->handleHint(word.get_incorrect_num(), word.get_hints_num(), hint_option,  word.get_translations());
+                    mHint->handleHint(word.get_incorrect_num(), word.get_hints_num(), hint_option, word.get_translations());
 
                     word.count_hints();
                 }
@@ -147,22 +147,22 @@ void Console::play() {
         } while (!correct);
 
         if(word.get_incorrect_num() == 0) {
-            current_chapter->counter.add_correct();
+            mCurrentChapter->counter.addCorrect();
         }
         else {
 //            cout << "Original obj destination: " << &(word.get_translations()[0]) << endl;
-            current_chapter->set_word_to_study(&word);
+            mCurrentChapter->setWordToStudy(&word);
 
             if(hint_option != 3) {
-                current_chapter->counter.add_incorrect();
+                mCurrentChapter->counter.addIncorrect();
             }
         }
     }
 
-    end_screen();
+    endScreen();
 }
 
-const string Console::get_user_answer() {
+const string Console::getUserAnswer() {
     string answer = "";
 //    cin >> answer;
     getline(cin, answer);
@@ -175,7 +175,7 @@ const string Console::get_user_answer() {
         cout << "Typed in \"end\" \n";
 
           clearConsole();
-            end_screen();
+        endScreen();
             system("PAUSE");
             _Exit(0);
     }
@@ -188,40 +188,40 @@ void Console::clearConsole() {
     system("CLS");
 }
 
-bool Console::check_if_answer_match(vector<English_Word> translations, string answer ) {
+bool Console::checkIfAnswerMatch(vector<English_Word> aTranslations, string aAnswer ) {
     bool matched = false;
 
-    cout << endl << "==== check_if_answer_match ====" << endl ;
+    cout << endl << "==== checkIfAnswerMatch ====" << endl ;
     cout << "words: ";
-    for(auto i : translations){
+    for(auto i : aTranslations){
         cout << i.get_value() << ", ";
 
-        if(i.get_value() == answer){
+        if(i.get_value() == aAnswer){
             matched = true;
             break;
         }
     }
-    cout << endl << "answer: " << answer << endl ;
+    cout << endl << "aAnswer: " << aAnswer << endl ;
     cout << "============================ \n " ;
 
     return matched;
 }
 
-void Console::end_screen(){
+void Console::endScreen(){
 
     clearConsole();
 
     cout << endl;
-    cout<<" Spot-on: "<<current_chapter->counter.get_incorrect_num() << endl;
-    cout<<" Faultless: "<< current_chapter->counter.get_correct_num() << endl;
-    cout<<" Skipped: "<< current_chapter->counter.get_skipped_num() << endl;
-    cout<<" From: "<< current_chapter->get_lines_amount() << " words" << endl;
+    cout << " Spot-on: " << mCurrentChapter->counter.getIncorrectNum() << endl;
+    cout << " Faultless: " << mCurrentChapter->counter.getCorrectNum() << endl;
+    cout << " Skipped: " << mCurrentChapter->counter.getSkippedNum() << endl;
+    cout << " From: " << mCurrentChapter->getLinesAmount() << " words" << endl;
     cout<< endl << endl;
 
-    smooth_cout(" Words to learn:");
+    smoothCout(" Words to learn:");
     cout << endl;
 
-    for(auto word : current_chapter->get_words_to_study()){
+    for(auto word : mCurrentChapter->getWordsToStudy()){
 //        const string temp = word.get_value();
 //        cout << temp;
 //        cout << endl;
@@ -239,28 +239,28 @@ void Console::end_screen(){
     }
 
     cout << endl;
-    if(current_chapter->get_lines_amount() == current_chapter->get_pl_words().size()) cout<<"	1 - face all again		";
-    if(current_chapter->counter.get_incorrect_num() > 0 || current_chapter->counter.get_skipped_num() > 0) cout << "2 - face described words";
+    if(mCurrentChapter->getLinesAmount() == mCurrentChapter->getPlWords().size()) cout << "	1 - face all again		";
+    if(mCurrentChapter->counter.getIncorrectNum() > 0 || mCurrentChapter->counter.getSkippedNum() > 0) cout << "2 - face described words";
     cout << "		3 - exit";
     cout << endl;
 
-    char input = get_char_input();
+    char input = getCharInput();
 
 //        clearConsole();
     if(input == '1'){
-        current_chapter->reset_to_study();
-        current_chapter->counter.reset();
+        mCurrentChapter->resetToStudy();
+        mCurrentChapter->counter.reset();
         play();
     }
 
     if(input == '2'){
-        current_chapter->filter_to_incorrect();
-        current_chapter->counter.reset();
+        mCurrentChapter->filterToIncorrect();
+        mCurrentChapter->counter.reset();
         play();
     }
 
     if(input == '3'){
-        smooth_cout("See ya");
+        smoothCout("See ya");
         cout << endl;
 
         system("PAUSE");
@@ -268,7 +268,7 @@ void Console::end_screen(){
     }
 }
 
-char Console::get_char_input() {
+char Console::getCharInput() {
     char choice;
 
     do{
@@ -282,6 +282,6 @@ char Console::get_char_input() {
 Console::~Console() {
     cout << "--------------- C O N S O L E       D E S T R U C T O R ---------------";
 
-    delete current_chapter;
-    delete hint;
+    delete mCurrentChapter;
+    delete mHint;
 }

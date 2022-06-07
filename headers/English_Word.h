@@ -10,16 +10,16 @@
 #include "Word.h"
 
 class English_Word: public Word {
-    int tried_times = 0;
+    int mTriedTimes = 0;
 public:
     using Word::Word;
     void reset();
-    std::string substr(int start, int end);
-    void erase(int start, int end);
-    size_t find(std::string phrase);
-    void add_incorrect();
-    friend std::ostream& operator<<(std::ostream &os, English_Word &D);
-    friend English_Word operator+ (English_Word B, English_Word &D);
+    std::string substr(int aStart, int aEnd);
+    void erase(int aStart, int aEnd);
+    size_t find(std::string aPhrase);
+    void addIncorrect();
+    friend std::ostream& operator<<(std::ostream &aOs, English_Word &aD);
+    friend English_Word operator+ (English_Word aB, English_Word &aD);
 };
 
 

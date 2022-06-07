@@ -12,8 +12,8 @@ Word::Word(){
 
 Word::Word(string a)
 {
-    value = a;
-    length = a.length();
+    mValue = a;
+    mLength = a.length();
 
 //    info();
 }
@@ -22,25 +22,25 @@ void Word::info()
 {
     cout << endl;
     cout << "============ DEBUG (dev mode)  ============" << endl;
-    cout << "value = " << value << " \n";
+    cout << "mValue = " << mValue << " \n";
 //    cout << "===============================" << endl;
 }
 
 string Word::get_value() {
-    return value;
+    return mValue;
 }
-void Word::set_value(string argValue) {
-    value = argValue;
+void Word::set_value(string aArgValue) {
+    mValue = aArgValue;
 }
 
 int Word::get_hints_num() {
-    return hints;
+    return mHints;
 }
 
 void Word::count_hints() {
-    hints++;
+    mHints++;
 }
 
 int Word::get_length() {
-    return length;
+    return mLength;
 }

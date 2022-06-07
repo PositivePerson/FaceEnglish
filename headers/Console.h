@@ -12,23 +12,20 @@
 //#include "Counter.h"
 
 class Console {
-    Chapter* current_chapter;
-    Hints* hint;
+    Chapter* mCurrentChapter;
+    Hints* mHint;
 public:
-    void smooth_cout(std::string text);
+    void smoothCout(std::string aText);
     Console();
     ~Console();
     void welcome();
-    void choose_chapter();
+    void chooseChapter();
     void play();
-
-    const std::string get_user_answer();
+    const std::string getUserAnswer();
     void clearConsole();
-    bool check_if_answer_match(std::vector<English_Word> translations, std::string answer);
-
-    void end_screen();
-
-    char get_char_input();
+    bool checkIfAnswerMatch(std::vector<English_Word> aTranslations, std::string aAnswer);
+    void endScreen();
+    char getCharInput();
 };
 
 #endif //UNTITLED_CONSOLE_H
