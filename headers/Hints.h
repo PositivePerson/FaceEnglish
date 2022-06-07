@@ -13,7 +13,7 @@ class Hints {
 public:
     Hints();
 
-    Hints(std::string argValue, English_Word eng_line);
+//    Hints(std::string argValue, English_Word eng_line);
 
     std::string first_hint(English_Word word);
 

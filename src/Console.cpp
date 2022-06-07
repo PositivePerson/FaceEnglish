@@ -11,7 +11,7 @@ using namespace std;
 
 Console::Console()
 {
-    cout << "- First constructor (Console) - \n";
+//    cout << "- First constructor (Console) - \n";
 }
 
 void Console::smooth_cout(std::string text)
@@ -33,10 +33,11 @@ void Console::welcome() {
     cout<<"   2 - Home"<<'\n';
     cout<<"   3 - In the house"<<'\n';
     cout<<"   4 - Test"<<'\n';
-//    cout<<"   4 - KitchenWare"<<'\n';
+//    cout<<"   5 - KitchenWare"<<'\n';
 //    cout<<"   5 - People"<<'\n';
 //    cout<<"   6 - Blended"<<'\n';
 //    cout<<"   7 - Bank"<<'\n';
+    cout<<"			User commands available:\n	";
     cout<<"			Ending round: 'end'\n	";
     cout<<"		Exit: 'exit'\n	";
 }
@@ -47,8 +48,8 @@ void Console::choose_chapter() {
     string pl_file;
 
     do{
-        cin>>whichSubject;
-        //whichSubject=_getche()-48;
+//        cin>>whichSubject;
+        whichSubject=get_char_input() -48;
 
         switch(whichSubject){
             case 1:
@@ -67,6 +68,14 @@ void Console::choose_chapter() {
                 eng_file="engTest.txt";
                 pl_file="polTest.txt";
                 break;
+//            case 5:
+//                eng_file="endKitchenWare.txt";
+//                pl_file="polKitchenWare.txt";
+//                break;
+//            case 6:
+//                eng_file="engKitchenWare.txt";
+//                pl_file="polKitchenWare.txt";
+//                break;
 //            case 4:
 //                eng_file="engKitchenWare.txt";
 //                pl_file="polKitchenWare.txt";
@@ -97,7 +106,7 @@ void Console::choose_chapter() {
 
 void Console::play() {
     for(auto word : current_chapter->get_pl_words()){
-//        clearConsole();
+        clearConsole();
 
         cout << word.get_value() << " to po angielsku: " << endl ;
         string user_ans;
@@ -117,10 +126,6 @@ void Console::play() {
             }
             else if(!correct) {
                 hint_option = hint->ask_if_hint_needed(word.get_incorrect_num(), word.get_hints_num());
-
-//                cout << endl;
-//                cout << " word.get_incorrect_num() : " << word.get_incorrect_num() << endl;
-//                cout << "  word.get_hints_num(): " << word.get_hints_num() << endl;
 
                 if(hint_option == 3) {
                     current_chapter->counter.add_skipped();
@@ -159,7 +164,8 @@ void Console::play() {
 
 const string Console::get_user_answer() {
     string answer = "";
-    cin >> answer;
+//    cin >> answer;
+    getline(cin, answer);
 
     if(answer == "exit") {
         cout << "Typed in \"exit\" \n";
@@ -202,6 +208,8 @@ bool Console::check_if_answer_match(vector<English_Word> translations, string an
 }
 
 void Console::end_screen(){
+
+    clearConsole();
 
     cout << endl;
     cout<<" Spot-on: "<<current_chapter->counter.get_incorrect_num() << endl;

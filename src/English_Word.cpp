@@ -13,7 +13,6 @@ void English_Word::reset() {
 }
 
 std::string English_Word::substr(int start, int end) {
-//    value.substr(start, end);
     return value.substr(start, end);
 }
 
