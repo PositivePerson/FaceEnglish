@@ -48,8 +48,9 @@ void Console::chooseChapter() {
     string pl_file;
 
     do{
-//        cin>>whichSubject;
-        whichSubject= getCharInput() - 48;
+        cin>>whichSubject;
+//        whichSubject = getCharInput() - 48;
+//        getchar();
 
         switch(whichSubject){
             case 1:
@@ -163,8 +164,11 @@ void Console::play() {
 }
 
 const string Console::getUserAnswer() {
-    string answer = "";
+    string answer;
 //    cin >> answer;
+
+    cin.clear();
+    cin.sync();
     getline(cin, answer);
 
     if(answer == "exit") {
@@ -191,18 +195,18 @@ void Console::clearConsole() {
 bool Console::checkIfAnswerMatch(vector<English_Word> aTranslations, string aAnswer ) {
     bool matched = false;
 
-    cout << endl << "==== checkIfAnswerMatch ====" << endl ;
-    cout << "words: ";
+//    cout << endl << "==== checkIfAnswerMatch ====" << endl ;
+//    cout << "words: ";
     for(auto i : aTranslations){
-        cout << i.get_value() << ", ";
+//        cout << i.get_value() << ", ";
 
         if(i.get_value() == aAnswer){
             matched = true;
             break;
         }
     }
-    cout << endl << "aAnswer: " << aAnswer << endl ;
-    cout << "============================ \n " ;
+//    cout << endl << "aAnswer: " << aAnswer << endl ;
+//    cout << "============================ \n " ;
 
     return matched;
 }
